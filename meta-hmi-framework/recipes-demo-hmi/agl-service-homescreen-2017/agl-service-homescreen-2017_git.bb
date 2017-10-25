@@ -9,5 +9,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ae6497158920d9524cf208c09cc4c984"
 inherit cmake aglwgt
 DEPENDS = "dbus glib-2.0 af-binder json-c"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-homescreen-2017;protocol=https;branch=master"
+#SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-homescreen-2017;protocol=https;branch=master"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-homescreen-2017;protocol=https;branch=sandbox/yuta-d/hmi-framework"
 SRCREV = "09143a0949dee0077cd9681356877b71ec4c99fb"

@@ -10,7 +10,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ae6497158920d9524cf208c09cc4c984"
 DEPENDS = "dbus glib-2.0 af-binder json-c"
 RDEPENDS_${PN} = "audiomanager audiomanager-plugins"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-soundmanager-2017;protocol=https;branch=master"
+#SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-soundmanager-2017;protocol=https;branch=master"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-soundmanager-2017;protocol=https;branch=sandbox/knimitz/hmi-framework"
 SRCREV = "693a0cfd691d7089238407b9a418a02a77401221"
 
 inherit cmake aglwgt
