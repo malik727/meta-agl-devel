@@ -10,7 +10,7 @@ RDEPENDS_${PN} = ""
 
 #SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-windowmanager-2017;protocol=https;branch=master"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-windowmanager-2017;protocol=https;branch=sandbox/yuta-d/hmi-framework"
-SRCREV = "9d25a6eaeb93ab7c732b3dbca28b6fa86b15347c"
+SRCREV = "77e04dd7cd2e2d43ae20ca5a377b131d1cbf0319"
 
 inherit cmake aglwgt
 
