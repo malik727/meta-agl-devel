@@ -9,7 +9,9 @@ LIC_FILES_CHKSUM = "file://homescreen/LICENSE;md5=ae6497158920d9524cf208c09cc4c9
 inherit qmake5 systemd pkgconfig aglwgt
 DEPENDS = " qtbase qtdeclarative qtquickcontrols2 pulseaudio agl-service-homescreen-2017 agl-service-windowmanager-2017 libhomescreen libwindowmanager"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/homescreen-2017;protocol=https;branch=master"
-SRCREV = "3d836c185f92fb38fed31e373f371187322b2f3f"
+#SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/homescreen-2017;protocol=https;branch=master"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/homescreen-2017;protocol=https;branch=sandbox/yuta-d/hmi-framework"
+#SRCREV = "3d836c185f92fb38fed31e373f371187322b2f3f"
+SRCREV = "f3d0ec1561c49ccca52c935cef33cb91ea30f8e3"
 
 PATH_prepend = "${STAGING_DIR_NATIVE}${OE_QMAKE_PATH_QT_BINS}:"
