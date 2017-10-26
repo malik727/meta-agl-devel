@@ -12,13 +12,6 @@ RDEPENDS_${PN} = "audiomanager audiomanager-plugins"
 
 #SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-soundmanager-2017;protocol=https;branch=master"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/apps/agl-service-soundmanager-2017;protocol=https;branch=sandbox/knimitz/hmi-framework"
-SRCREV = "693a0cfd691d7089238407b9a418a02a77401221"
+SRCREV = "d8a125b3348826b5d993568c631c096102d9e1ac"
 
 inherit cmake aglwgt
-
-do_install_append() {
-	install -d ${D}${sysconfdir}/dbus-1/system.d
-	install -m 0644 ${S}/conf/soundmanager-dbus.conf ${D}${sysconfdir}/dbus-1/system.d/
-}
-
-FILES_${PN} += "${sysconfdir}/dbus-1/system.d/soundmanager-dbus.conf"
