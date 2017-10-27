@@ -9,6 +9,6 @@ RDEPENDS_${PN} = "agl-service-windowmanager-2017"
 
 #SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libwindowmanager.git;protocol=https;branch=master"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libwindowmanager.git;protocol=https;branch=sandbox/yuta-d/hmi-framework"
-SRCREV = "922255ac97240980059979ab7975118f46c950a0"
+SRCREV = "70d843bfc9ecbd644481becdd93114d092cbbdd7"
 
 inherit cmake
