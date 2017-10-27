@@ -8,7 +8,7 @@ DEPENDS = "af-binder json-c"
 RDEPENDS_${PN} = "agl-service-windowmanager-2017"
 
 #SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libwindowmanager.git;protocol=https;branch=master"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libwindowmanager.git;protocol=https;branch=sandbox/yuta-d/hmi-framework"
-SRCREV = "70d843bfc9ecbd644481becdd93114d092cbbdd7"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libwindowmanager.git;protocol=https;branch=sandbox/knimitz/hmi-framework"
+SRCREV = "${AUTOREV}"
 
 inherit cmake
