@@ -9,6 +9,6 @@ RDEPENDS_${PN} = "agl-service-soundmanager-2017"
 
 #SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libsoundmanager.git;protocol=https;branch=master"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/libsoundmanager.git;protocol=https;branch=sandbox/knimitz/hmi-framework"
-SRCREV = "2fee4a6fd0612d1336e5be87f4e9369f27ebb52d"
+SRCREV = "${AUTOREV}"
 
 inherit cmake
