@@ -11,7 +11,7 @@ DEPENDS = "json-c wayland wayland-ivi-extension virtual/libhomescreen libwindowm
 inherit cmake
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/xdg-launcher;protocol=https;branch=${AGL_BRANCH}"
-SRCREV  = "${AGL_APP_REVISION}"
+SRCREV  = "b4971d7d0605c87b9d2703adcb9929468bd49479"
 
 PV = "1.0+git${SRCPV}"
 S  = "${WORKDIR}/git"
