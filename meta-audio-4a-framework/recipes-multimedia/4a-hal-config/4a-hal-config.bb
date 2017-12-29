@@ -18,9 +18,15 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 AUDIO_DEV_NAME ?= "Speakers"
 AUDIO_DEV_NAME_ID ?= "0"
+AUDIO_DEV_CARD_NAME ?= "0"
 
 AUDIO_DEV_NAME_m3ulcb = "M3-Speakers"
+AUDIO_DEV_CARD_NAME_m3ulcb = "rsnddai0ak4613h"
 AUDIO_DEV_NAME_ID_m3ulcb = "rsnddai0ak4613h"
+
+AUDIO_DEV_NAME_m3ulcb = "Speakers"
+AUDIO_DEV_CARD_NAME_m3ulcb = "ep016ch"
+AUDIO_DEV_NAME_ID_m3ulcb= "hal-most-unicens"
 
 inherit afb-system
 
@@ -28,7 +34,7 @@ do_install () {
     install -d ${D}/${sysconfdir}
     install -m 0755 ${WORKDIR}/asound.conf.template ${D}/${sysconfdir}/asound.conf
     sed -i "s|@AUDIO_DEV_NAME@|${AUDIO_DEV_NAME}|g" ${D}/${sysconfdir}/asound.conf
-    sed -i "s|@AUDIO_DEV_NAME_ID@|${AUDIO_DEV_NAME_ID}|g" ${D}/${sysconfdir}/asound.conf
+    sed -i "s|@AUDIO_DEV_CARD_NAME@|${AUDIO_DEV_CARD_NAME}|g" ${D}/${sysconfdir}/asound.conf
     sed -i "s|@INSTALL_PREFIX@|${INSTALL_PREFIX}|g" ${D}/${sysconfdir}/asound.conf
 
     install -d "${D}${prefix}/agl-service-audio-4a"

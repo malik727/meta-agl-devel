@@ -7,7 +7,7 @@
 # ----------------------------------------------------
 pcm.@AUDIO_DEV_NAME@ {
     type dmix
-    slave {pcm "hw:@AUDIO_DEV_NAME_ID@"}
+    slave {pcm "hw:@AUDIO_DEV_CARD_NAME@"}
     ipc_key 1001          # ipc_key should be unique to each dmix
 }
 
