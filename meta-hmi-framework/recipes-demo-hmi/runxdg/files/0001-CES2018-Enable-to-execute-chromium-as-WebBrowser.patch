@@ -1,0 +1,45 @@
+From 5f6064917060ed2520a2bc57dcab3ee8eb2cf05d Mon Sep 17 00:00:00 2001
+From: Tadao Tanikawa <tanikawa.tadao@jp.panasonic.com>
+Date: Sat, 13 Jan 2018 05:54:25 +0900
+Subject: [PATCH] [CES2018] Enable to execute chromium as WebBrowser
+
+Change-Id: I509fcd3a5557e6b8dbb71d708e56d4c56a0492f6
+Signed-off-by: Tadao Tanikawa <tanikawa.tadao@jp.panasonic.com>
+---
+ package/webbrowser/runxdg.toml | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/package/webbrowser/runxdg.toml b/package/webbrowser/runxdg.toml
+index ed275e4..7a576b1 100644
+--- a/package/webbrowser/runxdg.toml
++++ b/package/webbrowser/runxdg.toml
+@@ -9,7 +9,7 @@ method = "POSIX"
+ # path: path to the executable
+ # e.g.
+ #   path = "/usr/bin/chromium"
+-path = "/usr/bin/weston-simple-egl"
++path = "/usr/bin/chromium"
+ 
+ # params: arguments of the excecutable
+ # e.g.
+@@ -18,5 +18,17 @@ path = "/usr/bin/weston-simple-egl"
+ #     "--no-sandbox",
+ #     "--window-size=1080,1488",
+ #     "--ozone-platform=wayland",
++#     "--touch-events=enabled",
++#     "--enable-wayland-ime",
++#     "--use-ime-service",
+ #     "<URL>"
+ #   ]
++params = [
++    "--mus",
++    "--no-sandbox",
++    "--single-process",
++    "--window-size=1080,1488",
++    "--ozone-platform=wayland",
++    "--touch-events=enabled",
++    "http://www.google.com/maps"
++]
+-- 
+2.7.4
+
