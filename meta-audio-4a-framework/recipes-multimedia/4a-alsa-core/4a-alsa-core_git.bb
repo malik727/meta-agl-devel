@@ -7,7 +7,7 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
 SRC_URI = "gitsm://gerrit.automotivelinux.org/gerrit/src/4a-alsa-core;protocol=https;branch=${AGL_BRANCH}"
-SRCREV = "${AGL_APP_REVISION}"
+SRCREV = "fe50b1e24283d14f9d516c1885819b2f520e3647"
 
 PV = "0.1+git${SRCPV}"
 S  = "${WORKDIR}/git"
