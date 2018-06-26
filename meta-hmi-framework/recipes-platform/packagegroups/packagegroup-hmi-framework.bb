@@ -14,4 +14,5 @@ RDEPENDS_${PN} += " \
   libhomescreen-2017 \
   runxdg \
   hmi-debug \
+  launcher \
 "
