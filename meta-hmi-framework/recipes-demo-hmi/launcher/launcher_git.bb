@@ -12,7 +12,7 @@ DEPENDS = "\
         agl-service-homescreen-2017 \
         agl-service-windowmanager-2017 \
         qlibwindowmanager \
-        virtual/libhomescreen \
+        qlibhomescreen \
 "
 
 inherit qmake5 systemd pkgconfig aglwgt
