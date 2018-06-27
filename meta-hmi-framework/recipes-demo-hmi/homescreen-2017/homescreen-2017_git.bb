@@ -21,7 +21,7 @@ DEPENDS = "\
 inherit qmake5 systemd pkgconfig aglwgt
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/homescreen-2017;protocol=https;branch=sandbox/zheng_wenlong/launcherTest"
-SRCREV  = "${AGL_APP_REVISION}"
+SRCREV  = "63e7ab867c75ac550b923815955e6dae3f0da984"
 
 PV      = "1.0+git${SRCPV}"
 S       = "${WORKDIR}/git/"
