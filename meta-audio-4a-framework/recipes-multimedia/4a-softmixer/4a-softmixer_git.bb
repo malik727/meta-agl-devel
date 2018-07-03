@@ -6,9 +6,13 @@ SECTION     = "apps"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "gitsm://github.com/iotbzh/4a-softmixer/;protocol=https;branch=${AGL_BRANCH}"
-#SRCREV = "${AGL_APP_REVISION}"
-SRCREV = "1065a98987848cd89a116c440ed476c96488ec1d"
+#SRC_URI = "gitsm://github.com/iotbzh/4a-softmixer/;protocol=https;branch=${AGL_BRANCH}"
+##SRCREV = "${AGL_APP_REVISION}"
+#SRCREV = "1065a98987848cd89a116c440ed476c96488ec1d"
+
+# TEMP WORKAROUND: use sandbox
+SRC_URI = "gitsm://github.com/iotbzh/4a-softmixer/;protocol=https;branch=sandbox/sdesneux/4a_master"
+SRCREV = "${AUTOREV}"
 
 DEPENDS += "lua"
 

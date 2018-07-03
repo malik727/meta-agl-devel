@@ -6,9 +6,13 @@ SECTION     = "apps"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
-SRC_URI = "gitsm://github.com/iotbzh/4a-hal-generic;protocol=https;branch=${AGL_BRANCH}"
-#SRCREV = "${AGL_APP_REVISION}"
-SRCREV = "90cae7bdb9487225d11e8daeea0202a1db5605bb"
+#SRC_URI = "gitsm://github.com/iotbzh/4a-hal-generic;protocol=https;branch=${AGL_BRANCH}"
+##SRCREV = "${AGL_APP_REVISION}"
+#SRCREV = "90cae7bdb9487225d11e8daeea0202a1db5605bb"
+
+# TEMP WORKAROUND: use sandbox
+SRC_URI = "gitsm://github.com/iotbzh/4a-hal-generic;protocol=https;branch=sandbox/sdesneux/4a_master"
+SRCREV = "${AUTOREV}"
 
 DEPENDS += "lua"
 

@@ -6,8 +6,12 @@ SECTION     = "apps"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
-SRC_URI = "gitsm://gerrit.automotivelinux.org/gerrit/apps/agl-service-audio-4a;protocol=https;branch=${AGL_BRANCH}"
-SRCREV = "${AGL_APP_REVISION}"
+#SRC_URI = "gitsm://gerrit.automotivelinux.org/gerrit/apps/agl-service-audio-4a;protocol=https;branch=${AGL_BRANCH}"
+#SRCREV = "${AGL_APP_REVISION}"
+
+# TEMP WORKAROUND: use sandbox
+SRC_URI = "gitsm://gerrit.automotivelinux.org/gerrit/apps/agl-service-audio-4a;protocol=https;branch=sandbox/sdesneux/4a_master"
+SRCREV = "${AUTOREV}"
 
 PV = "0.1+git${SRCPV}"
 S  = "${WORKDIR}/git"
