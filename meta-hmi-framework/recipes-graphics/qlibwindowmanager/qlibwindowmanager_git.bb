@@ -8,7 +8,7 @@ RDEPENDS_${PN} = "libwindowmanager"
 
 inherit qmake5
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/src/libqtwindowmanager.git;protocol=https;branch=${AGL_BRANCH}"
-SRCREV = "d5d31fe493c88756831e7cf36255acdccbbdde98"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/src/libqtwindowmanager.git;protocol=https;branch=sandbox/ruke47/flounder_RPi3"
+SRCREV = "${AUTOREV}"
 S = "${WORKDIR}/git"
 PV = "1.0+git${SRCPV}"
