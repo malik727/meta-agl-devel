@@ -1,0 +1,13 @@
+[Unit]
+Before=local-fs.target
+Requires=systemd-fsck@dev-disk-by\x2dlabel-GUEST_OTHERS.service
+After=systemd-fsck@dev-disk-by\x2dlabel-GUEST_OTHERS.service
+
+[Mount]
+Where=/var/local/lib/containers/GUEST_OTHERS
+What=/dev/disk/by-label/GUEST_OTHERS
+Type=ext4
+Options=defaults,noatime
+
+[Install]
+WantedBy=multi-user.target
