@@ -13,3 +13,4 @@ The following features are pulled:
 
 * agl-container-host 
 * agl-lxc
+* agl-weston-remoting

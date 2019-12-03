@@ -12,5 +12,6 @@ authors: Tadao Tanikawa <tanikawa.tadao@jp.panasonic.com>
 The following features are pulled:
 
 * agl-demo
+* agl-cluster-demo-support
 * agl-lxc
 * agl-container-demo-guest
