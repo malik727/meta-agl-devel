@@ -1,4 +1,5 @@
 SRC_URI_append = " \
+    file://0001-lxc-net-add-network.target.patch \
     file://lxc.conf \
 "
 

@@ -1,0 +1,33 @@
+From 0ee71b162b7a8224f62b6c977126c8ee1225a62c Mon Sep 17 00:00:00 2001
+From: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+Date: Tue, 26 Nov 2019 12:39:50 +0900
+Subject: [PATCH] lxc-net: add network.target
+
+When lxc-net service will run before eth0 is up, then it fails.
+
+Log:
+[FAILED] Failed to start LXC network bridge setup.
+
+h3ulcb-host:~# journalctl | grep lxc-net
+Nov 20 11:55:48 h3ulcb-host lxc-net[3708]: dnsmasq: failed to create listening socket for 10.0.3.1: Cannot assign requested address
+Nov 20 11:55:48 h3ulcb-host lxc-net[3708]: Failed to setup lxc-net.
+
+Signed-off-by: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+---
+ config/init/systemd/lxc-net.service.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/init/systemd/lxc-net.service.in b/config/init/systemd/lxc-net.service.in
+index 1b8ef99..fbb3867 100644
+--- a/config/init/systemd/lxc-net.service.in
++++ b/config/init/systemd/lxc-net.service.in
+@@ -1,6 +1,6 @@
+ [Unit]
+ Description=LXC network bridge setup
+-After=network-online.target
++After=network-online.target network.target
+ Before=lxc.service
+ 
+ [Service]
+-- 
+2.7.4
