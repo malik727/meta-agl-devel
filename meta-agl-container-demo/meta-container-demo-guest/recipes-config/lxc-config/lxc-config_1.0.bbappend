@@ -1,4 +1,10 @@
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
 AGL_CONTAINER_MAC_ADDR ??= "00:16:3e:cf:07:ff"
+
+SRC_URI_append = " \
+    file://100_compositor.cfg \
+    "
 
 do_install_append() {
     # override network interface configuration
