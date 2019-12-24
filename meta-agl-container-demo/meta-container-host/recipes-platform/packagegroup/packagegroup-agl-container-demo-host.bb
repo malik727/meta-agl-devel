@@ -31,3 +31,20 @@ RDEPENDS_${PN} += "\
 RDEPENDS_${PN} += "\
     guests-filesystem \
     "
+
+# Add most and sllin driver
+RDEPENDS_${PN} += "\
+    unicens-config \
+    most \
+    sllin \
+    "
+
+# Radio?
+RDEPENDS_${PN} += "\
+    linux-firmware-ralink \
+    "
+
+# Pipewire
+RDEPENDS_${PN} += "\
+    ${@bb.utils.contains('DISTRO_FEATURES', 'pipewire', 'pipewire', '', d)} \
+    "
