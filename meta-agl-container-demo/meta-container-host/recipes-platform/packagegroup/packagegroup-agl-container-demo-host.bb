@@ -48,3 +48,15 @@ RDEPENDS_${PN} += "\
 RDEPENDS_${PN} += "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'pipewire', 'pipewire', '', d)} \
     "
+
+#
+# Added recipes of gstreamer for cluster combination demo
+#
+# Because of libdrm issue, container demo has nested weston compositor.
+# Host: weston(drm-backend), Guest: weston(wayland-backend)
+#
+RDEPENDS_${PN} += "\
+    packagegroup-agl-graphical-multimedia \
+    gstreamer1.0-plugins-base-meta \
+    gstreamer1.0-plugins-good-meta \
+    "
