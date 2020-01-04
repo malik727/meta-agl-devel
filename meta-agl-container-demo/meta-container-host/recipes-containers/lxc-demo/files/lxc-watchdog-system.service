@@ -1,0 +1,6 @@
+[Unit]
+Description=Trigger to reboot the system
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/watchdog_system.sh

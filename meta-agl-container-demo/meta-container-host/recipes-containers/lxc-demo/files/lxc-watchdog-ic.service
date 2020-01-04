@@ -1,0 +1,6 @@
+[Unit]
+Description=Trigger to reboot IC container
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/watchdog_ic.sh

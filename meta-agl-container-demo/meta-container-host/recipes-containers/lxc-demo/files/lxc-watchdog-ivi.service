@@ -1,0 +1,6 @@
+[Unit]
+Description=Trigger to reboot IVI container
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/watchdog_ivi.sh

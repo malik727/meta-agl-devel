@@ -55,7 +55,7 @@ RDEPENDS_${PN} += "\
     "
 
 #
-# Added recipes of gstreamer for cluster combination demo
+# More recipes for cluster combination demo
 #
 # Because of libdrm issue, container demo has nested weston compositor.
 # Host: weston(drm-backend), Guest: weston(wayland-backend)
@@ -70,5 +70,7 @@ RDEPENDS_${PN} += "\
 # Demo: reboot container, reboot system
 #
 RDEPENDS_${PN} += "\
+   inotify-tools \
    lxc-launcher \
+   lxc-demo \
    "
