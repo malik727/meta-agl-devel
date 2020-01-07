@@ -9,6 +9,7 @@ SRC_URI_append = " \
     file://101_snd.cfg \
     file://102_usb.cfg \
     file://103_bluetooth.cfg \
+    file://104_radio.cfg \
     "
 
 do_install_append() {
