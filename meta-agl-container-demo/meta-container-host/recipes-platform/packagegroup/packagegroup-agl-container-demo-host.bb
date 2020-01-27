@@ -31,9 +31,14 @@ RDEPENDS_${PN} += "\
 RDEPENDS_${PN} += "\
     guests-filesystem \
     "
-
+#
 # Add most and sllin driver
+#
+# Hack: agl-service-unicens need to be installed to Host
+#       because of playing not started when using most/unicens.
+#
 RDEPENDS_${PN} += "\
+    agl-service-unicens \
     unicens-config \
     most \
     sllin \
