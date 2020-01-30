@@ -65,3 +65,10 @@ RDEPENDS_${PN} += "\
     gstreamer1.0-plugins-base-meta \
     gstreamer1.0-plugins-good-meta \
     "
+
+#
+# Demo: reboot container, reboot system
+#
+RDEPENDS_${PN} += "\
+   lxc-launcher \
+   "
