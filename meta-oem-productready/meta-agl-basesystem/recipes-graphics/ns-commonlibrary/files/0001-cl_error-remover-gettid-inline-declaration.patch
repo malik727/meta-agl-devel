@@ -1,0 +1,25 @@
+From 43656b137f48c4db566cc288f8cabc0f1af6aa4c Mon Sep 17 00:00:00 2001
+From: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+Date: Wed, 28 Oct 2020 04:27:09 +0900
+Subject: [PATCH] cl_error: remover gettid inline declaration
+
+gettid is multiple decdeclaration in cl_error
+---
+ common_library/client/files/include/cl_error.h | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/common_library/client/files/include/cl_error.h b/common_library/client/files/include/cl_error.h
+index 84bf64e..1441262 100644
+--- a/common_library/client/files/include/cl_error.h
++++ b/common_library/client/files/include/cl_error.h
+@@ -21,10 +21,6 @@
+ #include <unistd.h>
+ #include <asm/unistd.h>
+ 
+-static inline int gettid(void) {  // NOLINT(readability/nolint)
+-  return (int)syscall(__NR_gettid);  // NOLINT(readability/casting)
+-}
+-
+ #define _num_to_str(num) #num
+ #define num_to_str(num) _num_to_str(num)
+ #define CL_PERROR(msg) \
