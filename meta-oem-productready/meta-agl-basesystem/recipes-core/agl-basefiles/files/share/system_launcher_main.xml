@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE system_launcher [
+  <!ELEMENT system_launcher (group+) >
+
+  <!ELEMENT  group (launch+) >
+  <!ATTLIST group
+    name        CDATA               #REQUIRED
+    wait_time   CDATA               #REQUIRED
+    trigger     (True|False)        #REQUIRED
+  >
+
+  <!ELEMENT  launch EMPTY >
+  <!ATTLIST launch
+    name              CDATA               #REQUIRED
+    path              CDATA               #REQUIRED
+    priority          CDATA               #REQUIRED
+    critical          CDATA               #REQUIRED
+    retry_cnt         CDATA               #REQUIRED
+    arguments         CDATA               #REQUIRED
+    logging_mask      CDATA               "NULL"
+    restart           (me|NULL)           #REQUIRED
+    is_start_required (True|False)        #REQUIRED
+    shutdown_critical       CDATA         #REQUIRED
+    shutdown_wait_time      CDATA         #REQUIRED
+    fast_shutdown_wait_time CDATA         #REQUIRED
+    user_name               CDATA         #REQUIRED
+    is_agl_unit                  (True|False)  #IMPLIED
+    disable_agl_resethistory     (True|False)  #IMPLIED
+    disable_nonagl_resethistory  (True|False)  #IMPLIED
+    env_cond                CDATA         #IMPLIED
+    cpu_assign              CDATA         #IMPLIED
+  >
+
+  <!ENTITY system_launcher_body SYSTEM   "system_launcher_body.xml">
+]>
+
+<system_launcher>
+  &system_launcher_body;
+</system_launcher>

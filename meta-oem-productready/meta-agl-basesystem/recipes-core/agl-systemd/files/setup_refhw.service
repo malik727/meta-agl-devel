@@ -1,0 +1,15 @@
+[Unit]
+Description=Initialize Reference Hardware Settings
+#After=weston.service
+
+[Service]
+EnvironmentFile=/tool_9E_SI/env.txt
+ExecStart=/tool_9E_SI/setup_refhw.sh
+Type=oneshot
+#StandardInput=tty
+#TTYPath=/dev/tty1
+#TTYReset=yes
+#TTYVHangup=yes
+
+[Install]
+WantedBy=multi-user.target

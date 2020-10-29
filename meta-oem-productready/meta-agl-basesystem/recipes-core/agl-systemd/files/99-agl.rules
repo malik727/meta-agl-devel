@@ -1,0 +1,11 @@
+#modify sound related device permissions
+
+SUBSYSTEM=="sound",MODE="0666"
+
+#modify dri related device permissions
+
+SUBSYSTEM=="drm",MODE="0777"
+
+#modify agl/evk related device permissions
+
+SUBSYSTEM=="evk",KERNEL=="agl/evk",MODE="0666"

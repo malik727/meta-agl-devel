@@ -1,0 +1,22 @@
+[Unit]
+Description=launch_sm
+After=setup_refhw.service agl-trigger.service
+ 
+[Service]
+PermissionsStartOnly=yes
+EnvironmentFile=/tool_9E_SI/env.txt
+ExecStartPre=/tool_9E_SI/set_cgroup_rt_runtime_us.sh 950000
+ExecStart=/tool_9E_SI/launch_sm.sh
+Type=oneshot
+User=root
+StandardOutput=inherit
+StandardError=inherit
+RemainAfterExit=yes
+LimitAS=infinity
+LimitRSS=infinity
+LimitCORE=infinity
+LimitNOFILE=65536
+LimitMSGQUEUE=infinity
+ 
+[Install]
+WantedBy=multi-user.target
