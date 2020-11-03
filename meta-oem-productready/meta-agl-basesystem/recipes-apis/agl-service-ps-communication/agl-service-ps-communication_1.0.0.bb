@@ -3,7 +3,7 @@ DESCRIPTION = "agl-service-ps-communication to build AGL software"
 LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-inherit agl-basesystem-common agl-basesystem-capability
+inherit agl-basesystem-common
 
 CAPABILITY = "cap_dac_override+ep:/usr/agl/bin/communication"
 
