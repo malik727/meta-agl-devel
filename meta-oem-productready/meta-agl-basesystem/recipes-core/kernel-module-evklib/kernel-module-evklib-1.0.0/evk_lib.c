@@ -1286,7 +1286,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_CREATE_MESSAGE_QUEUE:
-    if (access_ok(VERIFY_READ, arg, sizeof(mesq))) { /* pgr0039 */
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(mesq))) { /* pgr0039 */
+#else
+     if (access_ok(VERIFY_READ, arg, sizeof(mesq))) { /* pgr0039 */
+#endif
       if (copy_from_user(&mesq, (EV_Flag *)arg, sizeof(mesq))) {
 	ret = -EFAULT;
 	break;
@@ -1300,7 +1304,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_ALLOC_FLAG_ID:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(queueID))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_WRITE, arg, sizeof(queueID))) { /* pgr0039 */
+#endif
       evk_alloc_flagID(&queueID);
       if (put_user(queueID, (EV_ID *)arg)) { /* pgr0039 */
 	ret = -EFAULT;
@@ -1313,7 +1321,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_ALLOC_FLAG64_ID:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(queueID))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_WRITE, arg, sizeof(queueID))) { /* pgr0039 */
+#endif
       evk_alloc_flag64ID(&queueID);
       if (put_user(queueID, (EV_ID *)arg)) { /* pgr0039 */
 	ret = -EFAULT;
@@ -1326,7 +1338,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_ALLOC_QUEUE_ID:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(queueID))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_WRITE, arg, sizeof(queueID))) { /* pgr0039 */
+#endif
       evk_alloc_queueID(&queueID);
       if (put_user(queueID, (EV_ID *)arg)) { /* pgr0039 */
 	ret = -EFAULT;
@@ -1344,7 +1360,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_STORE_FLAG:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(EV_Flag))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_READ, arg, sizeof(EV_Flag))) { /* pgr0039 */
+#endif
       ret = evk_store_flag((EV_Flag *)arg, evk_mem_user);
     } else {
       ret = -EFAULT;
@@ -1352,7 +1372,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_STORE_FLAG64:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(EV_Flag64))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_READ, arg, sizeof(EV_Flag64))) { /* pgr0039 */
+#endif
       ret = evk_store_flag64((EV_Flag64 *)arg, evk_mem_user);
     } else {
       ret = -EFAULT;
@@ -1360,7 +1384,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     break;
 
   case EVK_IOC_STORE_MESSAGE:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(EV_Message))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_READ, arg, sizeof(EV_Message))) { /* pgr0039 */
+#endif
       ret = evk_store_message((EV_Message *)arg, evk_mem_user);
     } else {
       ret = -EFAULT;
@@ -1388,7 +1416,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
     peek_only = 0;
     wait = 0;
   get_event:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(EV_Event))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_WRITE, arg, sizeof(EV_Event))) { /* pgr0039 */
+#endif
       ret = evk_get_event((EV_Event *)arg, peek_only, wait, evk_mem_user);
     } else {
       ret = -EFAULT;
@@ -1403,7 +1435,11 @@ evk_ioctl(struct file *filp, unsigned int cmd,
   case EVK_IOC_GET_NEXT_EVENT:
     peek_only = 0;
   get_next:
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
+    if (access_ok(arg, sizeof(EVK_Next_Event_Query))) { /* pgr0039 */
+#else
     if (access_ok(VERIFY_WRITE, arg, sizeof(EVK_Next_Event_Query))) { /* pgr0039 */
+#endif
       ret = evk_get_next_event((EVK_Next_Event_Query *)arg, peek_only);
     } else {
       ret = -EFAULT;

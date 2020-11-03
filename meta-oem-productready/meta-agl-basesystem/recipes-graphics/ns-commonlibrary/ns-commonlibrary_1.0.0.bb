@@ -10,7 +10,8 @@ FILES_${PN} += " \
 "
 FILES_${PN}-dev += "/usr/agl/include/*"
  
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/ns-commonlibrary"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/ns-commonlibrary \
+           file://0001-cl_error-remover-gettid-inline-declaration.patch"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"
