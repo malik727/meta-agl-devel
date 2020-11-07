@@ -8,7 +8,7 @@ inherit agl-basesystem-hal
 FILES_${PN} += " \
 "
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/input_hal"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=input_hal/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"

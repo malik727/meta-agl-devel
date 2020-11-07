@@ -15,7 +15,7 @@ FILES_${PN} += "/usr/agl/share/BS/ss/system_manager/rodata/PhaseInfo.txt"
 
 FILES_${PN} += "/nv/BS/ss/system_manager/*"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/ss-systemmanager"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"

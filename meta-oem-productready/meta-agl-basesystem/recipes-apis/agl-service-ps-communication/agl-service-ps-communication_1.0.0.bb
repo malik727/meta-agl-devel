@@ -9,7 +9,7 @@ CAPABILITY = "cap_dac_override+ep:/usr/agl/bin/communication"
 
 FILES_${PN} += " /usr/agl/bin/* "
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/ps-communication"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=peripheralservice/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"

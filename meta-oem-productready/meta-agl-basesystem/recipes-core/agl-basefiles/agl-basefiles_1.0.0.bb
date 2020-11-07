@@ -5,13 +5,14 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 BBCLASSEXTEND = "native nativesdk"
 
-SRC_URI += " \
-    file://LICENSE \
-    file://bin \
-    file://share \
-    file://BS \
-    file://include \
-    file://agldd \
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-basefiles/files/;branch=master"
+#SRC_URI += " \
+#    file://LICENSE \
+#    file://bin \
+#    file://share \
+#    file://BS \
+#    file://include \
+#    file://agldd \
 "
 
 FILES_${PN} += " \

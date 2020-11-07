@@ -13,7 +13,7 @@ FILES_${PN} += " \
 FILES_${PN}-staticdev += " /usr/agl/lib/*.a "
 FILES_${PN} += "/nv/BS/ss/logger_service/rwdata/frameworkunifiedlog"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/ss-loggerservice"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"

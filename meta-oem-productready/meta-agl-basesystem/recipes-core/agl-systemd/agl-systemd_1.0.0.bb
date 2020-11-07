@@ -7,17 +7,18 @@ S = "${WORKDIR}"
 ALLOW_EMPTY_${PN} = "1"
 BB_VERBOSE_LOGS = "1"
 
-SRC_URI += " \
-    file://LICENSE \
-    file://env.txt \
-    file://setup_refhw.service \
-    file://launch_sm.service \
-    file://systemd-udev-trigger.service \
-    file://99-agl.rules \
-    file://agl-trigger.service \
-    file://options.conf \
-    file://tool_9E_SI \
-    file://usr \
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-systemd/files/;branch=master"
+#SRC_URI += " \
+#    file://LICENSE \
+#    file://env.txt \
+#    file://setup_refhw.service \
+#    file://launch_sm.service \
+#    file://systemd-udev-trigger.service \
+#    file://99-agl.rules \
+#    file://agl-trigger.service \
+#    file://options.conf \
+#    file://tool_9E_SI \
+#    file://usr \
 "
 FILES_${PN} += "\
     /tool_9E_SI/* \

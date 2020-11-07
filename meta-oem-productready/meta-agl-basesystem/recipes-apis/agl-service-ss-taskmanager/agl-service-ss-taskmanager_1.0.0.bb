@@ -10,7 +10,7 @@ CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid=ep:/usr/agl/bin/tskmgr"
 FILES_${PN} += " \
     /usr/agl/bin/* \
 "
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/ss-taskmanager"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"

@@ -7,7 +7,7 @@ inherit agl-basesystem-common
 FILES_${PN} += " /usr/agl/lib/* "
 FILES_${PN}-dev += "/usr/agl/include/*"
  
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/stub"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=stub/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"

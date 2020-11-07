@@ -12,7 +12,7 @@ FILES_${PN}-dev += "/usr/agl/include/*"
  
 FILES_${PN}-staticdev = "/usr/agl/lib/*.a"
  
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/toyota.git;protocol=https;branch=sandbox/ToshikazuOhiwa/vs-positioning"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=master"
 SRCREV = "${AUTOREV}"
 
 PV = "1.0.0+gitr${SRCPV}"
