@@ -1,0 +1,73 @@
+From 97ea1112d04d6047cb2cd47f09cd8c9e524df608 Mon Sep 17 00:00:00 2001
+From: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+Date: Fri, 13 Nov 2020 15:03:16 +0900
+Subject: [PATCH] backend-wayland: Disable frame repaint
+
+Signed-off-by: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+---
+ libweston/backend-wayland/wayland.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/libweston/backend-wayland/wayland.c b/libweston/backend-wayland/wayland.c
+index 42af0c8..4e7c956 100644
+--- a/libweston/backend-wayland/wayland.c
++++ b/libweston/backend-wayland/wayland.c
+@@ -435,7 +435,7 @@ wayland_output_update_gl_border(struct wayland_output *output)
+ 			cairo_image_surface_create(CAIRO_FORMAT_ARGB32,
+ 						   fwidth, iy);
+ 	cr = cairo_create(output->gl.border.top);
+-	frame_repaint(output->frame, cr);
++//	frame_repaint(output->frame, cr);
+ 	cairo_destroy(cr);
+ 	gl_renderer->output_set_border(&output->base, GL_RENDERER_BORDER_TOP,
+ 				       fwidth, iy,
+@@ -449,7 +449,7 @@ wayland_output_update_gl_border(struct wayland_output *output)
+ 						   ix, 1);
+ 	cr = cairo_create(output->gl.border.left);
+ 	cairo_translate(cr, 0, -iy);
+-	frame_repaint(output->frame, cr);
++//	frame_repaint(output->frame, cr);
+ 	cairo_destroy(cr);
+ 	gl_renderer->output_set_border(&output->base, GL_RENDERER_BORDER_LEFT,
+ 				       ix, 1,
+@@ -463,7 +463,7 @@ wayland_output_update_gl_border(struct wayland_output *output)
+ 						   fwidth - (ix + iwidth), 1);
+ 	cr = cairo_create(output->gl.border.right);
+ 	cairo_translate(cr, -(iwidth + ix), -iy);
+-	frame_repaint(output->frame, cr);
++//	frame_repaint(output->frame, cr);
+ 	cairo_destroy(cr);
+ 	gl_renderer->output_set_border(&output->base, GL_RENDERER_BORDER_RIGHT,
+ 				       fwidth - (ix + iwidth), 1,
+@@ -477,7 +477,7 @@ wayland_output_update_gl_border(struct wayland_output *output)
+ 						   fwidth, fheight - (iy + iheight));
+ 	cr = cairo_create(output->gl.border.bottom);
+ 	cairo_translate(cr, 0, -(iy + iheight));
+-	frame_repaint(output->frame, cr);
++//	frame_repaint(output->frame, cr);
+ 	cairo_destroy(cr);
+ 	gl_renderer->output_set_border(&output->base, GL_RENDERER_BORDER_BOTTOM,
+ 				       fwidth, fheight - (iy + iheight),
+@@ -566,7 +566,7 @@ wayland_output_update_shm_border(struct wayland_shm_buffer *buffer)
+ 
+ 	/* Draw using a pattern so that the final result gets clipped */
+ 	cairo_push_group(cr);
+-	frame_repaint(buffer->output->frame, cr);
++//	frame_repaint(buffer->output->frame, cr);
+ 	cairo_pop_group_to_source(cr);
+ 	cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
+ 	cairo_paint(cr);
+@@ -901,8 +901,8 @@ wayland_output_set_windowed(struct wayland_output *output)
+ 		if (!b->theme)
+ 			return -1;
+ 	}
+-	output->frame = frame_create(b->theme, 100, 100,
+-	                             FRAME_BUTTON_CLOSE, output->title, NULL);
++//	output->frame = frame_create(b->theme, 100, 100,
++//	                             FRAME_BUTTON_CLOSE, output->title, NULL);
+ 	if (!output->frame)
+ 		return -1;
+ 
+-- 
+2.7.4
+
