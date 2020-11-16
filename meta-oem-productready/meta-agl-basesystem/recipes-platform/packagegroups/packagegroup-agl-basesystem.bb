@@ -1,10 +1,5 @@
 DESCRIPTION = "BaseSystem Package Groups"
-LICENSE = "CLOSED"
-PR = "r1"
-
-DEPENDS = " "
-
-PACKAGE_ARCH = "${MACHINE_ARCH}"
+LICENSE = "Apache-2.0"
 
 inherit packagegroup
 

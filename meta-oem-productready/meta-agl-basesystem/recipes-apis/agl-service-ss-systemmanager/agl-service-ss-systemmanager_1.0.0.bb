@@ -3,8 +3,6 @@ DESCRIPTION = "agl-service-ss-systemmanager to build AGL software"
 LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-inherit agl-basesystem-common
-
 CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/agl/bin/SS_SystemManager"
 
 FILES_${PN} += " /usr/agl/bin/* "
@@ -16,7 +14,7 @@ FILES_${PN} += "/usr/agl/share/BS/ss/system_manager/rodata/PhaseInfo.txt"
 FILES_${PN} += "/nv/BS/ss/system_manager/*"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
-SRCREV = "${AUTOREV}"
+SRCREV := "${BASESYSTEM_SRCREV}"
 
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"
@@ -37,6 +35,9 @@ DEPENDS += " \
     vs-clock \
     vs-diagcode \
 "
+
+inherit agl-basesystem-common
+
 RDEPENDS_${PN} += " \
     agl-service-ss-resourcemanager \
     agl-service-ss-loggerservice \

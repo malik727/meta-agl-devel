@@ -1,14 +1,8 @@
 DESCRIPTION = "hal Package Groups"
-LICENSE = "CLOSED"
-PR = "r1"
+LICENSE = "Apache-2.0"
 
 DEPENDS_qemux86-64 = "agl-basefiles"
 DEPENDS_qemuarm64 = "agl-basefiles"
-
-#
-# packages which content depend on MACHINE_FEATURES need to be MACHINE_ARCH
-#
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 

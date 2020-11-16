@@ -29,6 +29,3 @@ do_install (){
     oe_runmake install
 }
 
-#sysroot_stage_all_append(){
-#    sysroot_stage_dir ${D}/usr/agl ${SYSROOT_DESTDIR}/usr/agl
-#}
