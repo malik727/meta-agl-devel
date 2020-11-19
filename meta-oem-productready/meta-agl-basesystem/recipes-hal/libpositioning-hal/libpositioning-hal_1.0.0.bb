@@ -7,8 +7,8 @@ FILES_${PN}-dev += "${INCLUDEDIR}/vehicle_service/*"
 
 do_package_qa[noexec] = "1"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=positioning_hal/;branch=master"
-SRCREV := "${BASESYSTEM_SRCREV}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=positioning_hal/;branch=${AGL_BRANCH}"
+SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"

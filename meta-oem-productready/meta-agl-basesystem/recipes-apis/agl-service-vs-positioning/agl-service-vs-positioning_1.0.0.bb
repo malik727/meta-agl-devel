@@ -14,8 +14,8 @@ FILES_${PN}-staticdev += " \
 
 FILES_${PN} += "${NVPATH}/files/BS/vs/positioning/*"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=master"
-SRCREV := "${BASESYSTEM_SRCREV}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=${AGL_BRANCH}"
+SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"

@@ -8,9 +8,9 @@ FILES_${PN} += " \
 "
 FILES_${PN}-dev += "${INCLUDEDIR}/*"
  
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=nsframework/;branch=master \
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=nsframework/;branch=${AGL_BRANCH} \
            file://0001-cl_error-remover-gettid-inline-declaration.patch"
-SRCREV := "${BASESYSTEM_SRCREV}"
+SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"

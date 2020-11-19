@@ -7,8 +7,8 @@ CAPABILITY = "cap_dac_override+ep:/usr/files/bin/communication"
 
 FILES_${PN} += " /usr/files/bin/* "
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=peripheralservice/;branch=master"
-SRCREV := "${BASESYSTEM_SRCREV}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=peripheralservice/;branch=${AGL_BRANCH}"
+SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"

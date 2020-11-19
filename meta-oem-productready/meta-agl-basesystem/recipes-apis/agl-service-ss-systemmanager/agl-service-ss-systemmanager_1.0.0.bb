@@ -13,8 +13,8 @@ FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/PhaseInfo.txt"
 
 FILES_${PN} += "${NVPATH}/files/BS/ss/system_manager/*"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
-SRCREV := "${BASESYSTEM_SRCREV}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=${AGL_BRANCH}"
+SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"
