@@ -16,7 +16,7 @@ FILES_${PN} += " \
     /agl-basefiles/share/* \
     ${CONFDIR}/backup_manager/* \
     ${CONFDIR}/systemmanager/* \
-    ${NVPATH}/BS/ns/npp/rwdata/* \
+    ${NVPATH}/ns/npp/rwdata/* \
 "
 
 FILES_${PN}-dev += " \ 
