@@ -5,13 +5,13 @@ Subject: [PATCH] cl_error: remover gettid inline declaration
 
 gettid is multiple decdeclaration in cl_error
 ---
- common_library/client/include/cl_error.h | 4 ----
+ common_library/client/files/include/cl_error.h | 4 ----
  1 file changed, 4 deletions(-)
 
-diff --git a/common_library/client/include/cl_error.h b/common_library/client/include/cl_error.h
+diff --git a/common_library/client/files/include/cl_error.h b/common_library/client/files/include/cl_error.h
 index 84bf64e..1441262 100644
---- a/common_library/client/include/cl_error.h
-+++ b/common_library/client/include/cl_error.h
+--- a/common_library/client/files/include/cl_error.h
++++ b/common_library/client/files/include/cl_error.h
 @@ -21,10 +21,6 @@
  #include <unistd.h>
  #include <asm/unistd.h>

@@ -6,9 +6,9 @@ LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e2
 inherit agl-basesystem-common
 
 FILES_${PN} += " \
-    /usr/agl/lib/* \
+    ${LIBDIR}/* \
 "
-FILES_${PN}-dev += "/usr/agl/include/*"
+FILES_${PN}-dev += "${INCLUDEDIR}/*"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV := "${BASESYSTEM_SRCREV}"

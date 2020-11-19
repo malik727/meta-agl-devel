@@ -3,11 +3,11 @@ DESCRIPTION = "agl-service-ns-backupmanager to build AGL software"
 LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-CAPABILITY = "cap_dac_override+ep:/usr/agl/bin/NS_BackupMgr"
+CAPABILITY = "cap_dac_override+ep:/usr/files/bin/NS_BackupMgr"
 
 FILES_${PN} += " \
-    /usr/agl/bin/* \
-    /nv/BS/ns/backup_manager/* \
+    /usr/files/bin/* \
+    ${NVPATH}/files/BS/ns/backup_manager/* \
 "
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=nsframework/;branch=master"

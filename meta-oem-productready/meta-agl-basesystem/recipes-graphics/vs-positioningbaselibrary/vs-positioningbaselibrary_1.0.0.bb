@@ -4,10 +4,10 @@ LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 FILES_${PN} += " \
-    /usr/agl/lib/* \
-    /nv/BS/vs/positioning_base_library/* \
+    ${LIBDIR}/* \
+    ${NVPATH}/files/BS/vs/positioning_base_library/* \
 "
-FILES_${PN}-dev += "/usr/agl/include/*"
+FILES_${PN}-dev += "${INCLUDEDIR}/*"
 
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=master"

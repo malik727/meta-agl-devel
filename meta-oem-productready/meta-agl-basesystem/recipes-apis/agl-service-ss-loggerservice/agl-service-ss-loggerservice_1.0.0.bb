@@ -5,13 +5,13 @@ LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e2
 
 inherit agl-basesystem-common
 
-CAPABILITY = "cap_dac_override+ep:/usr/agl/bin/SS_LoggerService"
+CAPABILITY = "cap_dac_override+ep:/usr/files/bin/SS_LoggerService"
 
 FILES_${PN} += " \
-    /usr/agl/bin/* \
+    /usr/files/bin/* \
 "
-FILES_${PN}-staticdev += " /usr/agl/lib/*.a "
-FILES_${PN} += "/nv/BS/ss/logger_service/rwdata/frameworkunifiedlog"
+FILES_${PN}-staticdev += " ${LIBDIR}/*.a "
+FILES_${PN} += "${NVPATH}/files/BS/ss/logger_service/rwdata/frameworkunifiedlog"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV := "${BASESYSTEM_SRCREV}"

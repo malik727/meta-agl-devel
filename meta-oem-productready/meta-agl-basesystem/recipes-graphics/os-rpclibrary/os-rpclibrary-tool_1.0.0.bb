@@ -24,9 +24,9 @@ do_compile (){
 }
 
 do_install (){
-	install -D -m 755 rpc_library/tool/rpc_apidef ${D}${base_prefix}/usr/bin/rpc_apidef
+	install -D -m 755 rpc_library/tool/rpc_apidef ${D}${base_prefix}/usr/files/bin/rpc_apidef
 }
-FILES_${PN} += "${base_prefix}/usr/bin/rpc_apidef"
+FILES_${PN} += "${base_prefix}/usr/files/bin/rpc_apidef"
 
 #inherit native nativesdk 
 BBCLASSEXTEND = "native nativesdk"

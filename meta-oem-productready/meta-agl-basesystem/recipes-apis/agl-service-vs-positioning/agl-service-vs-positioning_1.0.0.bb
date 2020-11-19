@@ -3,16 +3,16 @@ DESCRIPTION = "agl-service-vs-positioning to build AGL software"
 LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-CAPABILITY = "cap_dac_override+ep:/usr/agl/bin/Positioning"
+CAPABILITY = "cap_dac_override+ep:/usr/files/bin/Positioning"
 
 FILES_${PN} += " \
-    /usr/agl/bin/* \
+    /usr/files/bin/* \
 "
 FILES_${PN}-staticdev += " \
-    /usr/agl/lib/*.a \
+    ${LIBDIR}/*.a \
 "
 
-FILES_${PN} += "/nv/BS/vs/positioning/*"
+FILES_${PN} += "${NVPATH}/files/BS/vs/positioning/*"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=master"
 SRCREV := "${BASESYSTEM_SRCREV}"
