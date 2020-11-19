@@ -1,8 +1,8 @@
 FILES_SOLIBSDEV = ""
 
 FILES_${PN}-dev += " \
-    /usr/include/* \
-    /usr/agl/include/* \
+    ${INCLUDEDIR}/* \
+    ${INCLUDEDIR}/* \
 "
 FILES_${PN}-staticdev = ""
 
@@ -21,9 +21,9 @@ do_compile (){
 
 do_install (){
     cd ${S}/hal_api
-    install -d ${D}/usr/include
-    install -D -m 644 *.h ${D}/usr/include
-    install -d ${D}/usr/lib/
+    install -d ${D}${INCLUDEDIR}
+    install -D -m 644 *.h ${D}${INCLUDEDIR}
+    install -d ${D}${LIBDIR}/
 
     cd ${S}
     oe_runmake install

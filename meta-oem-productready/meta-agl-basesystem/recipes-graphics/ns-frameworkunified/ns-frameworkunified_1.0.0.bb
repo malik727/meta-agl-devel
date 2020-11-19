@@ -25,15 +25,15 @@ EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="framework_unified"
 
 FILES_${PN} += " \
-    /usr/agl/lib/* \
-    /usr/agl/conf/ns_logger/* \
-    /nv/BS/ns/framework_unified/* \
-    /usr/agl/conf/BS/ns/framework_unified/rodata/* \
+    ${LIBDIR}/* \
+    ${CONFDIR}/ns_logger/* \
+    ${NVPATH}/files/BS/ns/framework_unified/* \
+    ${CONFDIR}/files/BS/ns/framework_unified/rodata/* \
 "
 FILES_${PN}-staticdev += " \
-    /usr/agl/lib/*.a \
+    ${LIBDIR}/*.a \
 "
-FILES_${PN}-dev += "/usr/agl/include/*"
+FILES_${PN}-dev += "${INCLUDEDIR}/*"
 
 
 RDEPENDS_${PN} += " \

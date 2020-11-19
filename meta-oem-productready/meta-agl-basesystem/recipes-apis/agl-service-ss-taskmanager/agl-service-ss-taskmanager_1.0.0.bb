@@ -3,10 +3,10 @@ DESCRIPTION = "agl-service-ss-taskmanager to build AGL software"
 LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid=ep:/usr/agl/bin/tskmgr"
+CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid=ep:/usr/files/bin/tskmgr"
 
 FILES_${PN} += " \
-    /usr/agl/bin/* \
+    /usr/files/bin/* \
 "
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV := "${BASESYSTEM_SRCREV}"

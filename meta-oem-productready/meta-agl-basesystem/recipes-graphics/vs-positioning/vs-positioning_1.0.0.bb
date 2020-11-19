@@ -4,11 +4,11 @@ LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 FILES_${PN} += " \
-    /usr/agl/lib/* \
+    ${LIBDIR}/* \
 "
-FILES_${PN}-dev += "/usr/agl/include/*"
+FILES_${PN}-dev += "${INCLUDEDIR}/*"
  
-FILES_${PN}-staticdev = "/usr/agl/lib/*.a"
+FILES_${PN}-staticdev = "${LIBDIR}/*.a"
  
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=master"
 SRCREV := "${BASESYSTEM_SRCREV}"

@@ -9,21 +9,21 @@ SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protoc
 SRCREV := "${BASESYSTEM_SRCREV}"
 
 FILES_${PN} += " \
-    /bin/* \
-    /agldd/* \
-    /include/* \
-    /BS/ns/npp/rwdata/* \
-    /share/* \
-    /usr/agl/conf/backup_manager/* \
-    /usr/agl/conf/systemmanager/* \
-    /nv/BS/ns/npp/rwdata/* \
+    /files/bin/* \
+    /files/agldd/* \
+    /files/include/* \
+    /files/BS/ns/npp/rwdata/* \
+    /files/share/* \
+    ${CONFDIR}/backup_manager/* \
+    ${CONFDIR}/systemmanager/* \
+    ${NVPATH}/files/BS/ns/npp/rwdata/* \
 "
 
 FILES_${PN}-dev += " \ 
-    /usr/agl/share/* \
-    /usr/agl/include/* \
-    /usr/agl/include/agldd/* \
-    /usr/include/linux/* \
+    ${SHAREDIR}/* \
+    ${INCLUDEDIR}/* \
+    ${INCLUDEDIR}/files/agldd/* \
+    ${INCLUDEDIR}/linux/* \
 "
 S = "${WORKDIR}"
 
@@ -33,18 +33,18 @@ do_package_qa[noexec] = "1"
 do_install[depends] += "virtual/kernel:do_shared_workdir"
 
 do_install() {
-        install -C -d ${D}/usr/agl/share/
-        install -C -d ${D}/usr/agl/include/agldd/
-        install -C -d ${D}/usr/include/linux/
-        install -C -d ${D}/nv/BS/ns/npp/rwdata/
-        install -m 644 ${WORKDIR}/agldd/* ${D}/usr/agl/include/agldd/
-        install -m 644 ${WORKDIR}/share/* ${D}/usr/agl/share/
-        install -m 644 ${WORKDIR}/BS/ns/npp/rwdata/* ${D}/nv/BS/ns/npp/rwdata
-        install -m 775 ${WORKDIR}/bin/launch_xml2cfg.sh ${D}/usr/agl/share/
-        install -D -m 0644 ${TMPDIR}/work-shared/${MACHINE}/kernel-build-artifacts/include/generated/autoconf.h ${D}/usr/include/linux/
+        install -C -d ${D}${SHAREDIR}/
+        install -C -d ${D}${INCLUDEDIR}/files/agldd/
+        install -C -d ${D}${INCLUDEDIR}/linux/
+        install -C -d ${D}${NVPATH}/files/BS/ns/npp/rwdata/
+        install -m 644 ${WORKDIR}/files/agldd/* ${D}${INCLUDEDIR}/files/agldd/
+        install -m 644 ${WORKDIR}/files/share/* ${D}${SHAREDIR}/
+        install -m 644 ${WORKDIR}/files/BS/ns/npp/rwdata/* ${D}${NVPATH}/files/BS/ns/npp/rwdata
+        install -m 775 ${WORKDIR}/files/bin/launch_xml2cfg.sh ${D}${SHAREDIR}/
+        install -D -m 0644 ${TMPDIR}/work-shared/${MACHINE}/kernel-build-artifacts/files/include/generated/autoconf.h ${D}${INCLUDEDIR}/linux/
 }
 
 sysroot_stage_all_append(){
-	sysroot_stage_dir ${D}/usr/agl ${SYSROOT_DESTDIR}${base_prefix}/usr/agl
+	sysroot_stage_dir ${D}/usr ${SYSROOT_DESTDIR}${base_prefix}/usr
 }
 

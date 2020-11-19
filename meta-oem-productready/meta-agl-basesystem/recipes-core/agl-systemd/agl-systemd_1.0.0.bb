@@ -11,8 +11,8 @@ SRCREV := "${BASESYSTEM_SRCREV}"
 FILES_${PN} += "\
     /tool_9E_SI/* \
     /usr/target/* \
-    /usr/agl/* \
-    /nv/* \
+    /usr/* \
+    ${NVPATH}/* \
     /ramd/bkup \
     /etc/systemd/system/tmp.mount.d \
 "
@@ -47,9 +47,9 @@ do_install() {
 	install -d ${D}/etc/systemd/system
         install -d ${D}/lib/udev/rules.d
 	install -m 644 ${WORKDIR}/99-agl.rules ${D}/lib/udev/rules.d
-	install -d -m 777 ${D}/nv/export
-	install -d -m 777 ${D}/nv/backup
-	install -d -m 777 ${D}/nv/log/frameworkunifiedlog
+	install -d -m 777 ${D}${NVPATH}/export
+	install -d -m 777 ${D}${NVPATH}/backup
+	install -d -m 777 ${D}${NVPATH}/log/frameworkunifiedlog
 	install -d -m 777 ${D}/ramd/bkup
 	install -d ${D}/etc/systemd/system/tmp.mount.d
 	install -m 644 ${WORKDIR}/options.conf ${D}/etc/systemd/system/tmp.mount.d
@@ -58,7 +58,7 @@ do_install() {
 sysroot_stage_all_append(){
 	sysroot_stage_dir ${D}/tool_9E_SI ${SYSROOT_DESTDIR}/tool_9E_SI
 	sysroot_stage_dir ${D}/usr/target ${SYSROOT_DESTDIR}/usr/target
-	sysroot_stage_dir ${D}/usr/agl ${SYSROOT_DESTDIR}/usr/agl
-	sysroot_stage_dir ${D}/nv/BS/ns/npp/rwdata ${SYSROOT_DESTDIR}/nv/BS/ns/npp/rwdata
+	sysroot_stage_dir ${D}/usr ${SYSROOT_DESTDIR}/usr
+	sysroot_stage_dir ${D}${NVPATH}/files/BS/ns/npp/rwdata ${SYSROOT_DESTDIR}${NVPATH}/files/BS/ns/npp/rwdata
 	sysroot_stage_dir ${D}/etc/systemd/system/tmp.mount.d ${SYSROOT_DESTDIR}/etc/systemd/system/tmp.mount.d
 }

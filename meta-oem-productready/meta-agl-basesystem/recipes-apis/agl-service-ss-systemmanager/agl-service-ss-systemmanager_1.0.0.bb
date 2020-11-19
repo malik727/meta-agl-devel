@@ -3,15 +3,15 @@ DESCRIPTION = "agl-service-ss-systemmanager to build AGL software"
 LICENSE     = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/agl/bin/SS_SystemManager"
+CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/files/bin/SS_SystemManager"
 
-FILES_${PN} += " /usr/agl/bin/* "
+FILES_${PN} += " /usr/files/bin/* "
 
-FILES_${PN} += "/usr/agl/conf/BS/ss/system_manager/rwdata/sm_launch.cfg"
-FILES_${PN} += "/usr/agl/share/BS/ss/system_manager/rodata/version.txt"
-FILES_${PN} += "/usr/agl/share/BS/ss/system_manager/rodata/PhaseInfo.txt"
+FILES_${PN} += "${CONFDIR}/files/BS/ss/system_manager/rwdata/sm_launch.cfg"
+FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/version.txt"
+FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/PhaseInfo.txt"
 
-FILES_${PN} += "/nv/BS/ss/system_manager/*"
+FILES_${PN} += "${NVPATH}/files/BS/ss/system_manager/*"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=master"
 SRCREV := "${BASESYSTEM_SRCREV}"
