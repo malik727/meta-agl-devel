@@ -6,6 +6,7 @@ inherit systemd
 S = "${WORKDIR}"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-systemd/files/;branch=master"
+SRCREV := "${BASESYSTEM_SRCREV}"
 
 FILES_${PN} += "\
     /tool_9E_SI/* \

@@ -14,6 +14,7 @@ FILES_${PN} = "/lib/modules/${KERNEL_VERSION}/evk_lib.ko"
 KERNEL_MODULE_AUTOLOAD += "evk_lib"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=kernel-module-evklib/kernel-module-evklib-1.0.0/;branch=master"
+SRCREV := "${BASESYSTEM_SRCREV}"
 
 S = "${WORKDIR}"
 

@@ -6,6 +6,7 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 BBCLASSEXTEND = "native nativesdk"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-basefiles/files/;branch=master"
+SRCREV := "${BASESYSTEM_SRCREV}"
 
 FILES_${PN} += " \
     /bin/* \
