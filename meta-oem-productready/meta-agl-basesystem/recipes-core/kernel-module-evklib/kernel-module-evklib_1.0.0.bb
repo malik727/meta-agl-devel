@@ -9,14 +9,14 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 
 inherit module
 
-FILES_${PN} = "/lib/modules/${KERNEL_VERSION}/evk_lib.ko"
+FILES_${PN} = "/lib/modules/${KERNEL_VERSION}/kernel/lib/evk_lib.ko"
 
 KERNEL_MODULE_AUTOLOAD += "evk_lib"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=kernel-module-evklib/kernel-module-evklib-1.0.0/;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=kernel-module-evklib/;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/kernel-module-evklib"
 
 do_install (){
 	install -d ${D}/lib/modules/${KERNEL_VERSION}/kernel/lib/
