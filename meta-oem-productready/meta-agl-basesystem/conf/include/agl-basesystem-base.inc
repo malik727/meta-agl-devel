@@ -5,5 +5,5 @@
 SHAREDIR = "/usr/share"
 INCLUDEDIR = "/usr/include"
 LIBDIR = "/usr/lib"
-CONFDIR = "/usr/conf"
-NVPATH = "/opt/nv"
+CONFDIR = "/{sysconfdir}/basesystem"
+NVPATH = "/var/local/lib/basesystem"
