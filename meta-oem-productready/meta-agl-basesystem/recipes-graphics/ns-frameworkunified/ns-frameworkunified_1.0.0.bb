@@ -41,3 +41,5 @@ RDEPENDS_${PN} += " \
     ns-loglibrary \
     ns-commonlibrary \
 "
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"

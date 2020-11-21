@@ -22,3 +22,4 @@ MAKE_DIR ="diag_code"
 EXTRA_MAKEFILE = " -f Makefile"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 
+AGL_BRANCH = "sandbox/ruke47/complete_build"

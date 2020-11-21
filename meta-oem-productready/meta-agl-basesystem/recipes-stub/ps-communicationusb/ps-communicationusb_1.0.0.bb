@@ -20,3 +20,4 @@ MAKE_DIR = "communication_usb"
 EXTRA_MAKEFILE = " -f Makefile"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 
+AGL_BRANCH = "sandbox/ruke47/complete_build"

@@ -22,3 +22,4 @@ S = "${WORKDIR}/kernel-module-evklib"
 
 RPROVIDES_${PN} += "kernel-module-evk_lib"
 
+AGL_BRANCH = "sandbox/ruke47/complete_build"

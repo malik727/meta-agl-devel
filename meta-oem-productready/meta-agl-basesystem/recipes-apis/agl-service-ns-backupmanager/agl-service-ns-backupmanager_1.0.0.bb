@@ -34,3 +34,5 @@ RDEPENDS_${PN} += " \
 EXTRA_MAKEFILE = " -f Makefile.server"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR = "backup_manager"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"

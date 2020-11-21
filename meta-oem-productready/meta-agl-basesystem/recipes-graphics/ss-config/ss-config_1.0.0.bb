@@ -33,3 +33,5 @@ RDEPENDS_${PN} += " \
 EXTRA_MAKEFILE=" -f Makefile.client"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="config"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"

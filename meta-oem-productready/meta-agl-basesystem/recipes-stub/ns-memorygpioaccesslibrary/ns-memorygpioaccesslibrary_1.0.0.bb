@@ -17,3 +17,5 @@ MAKE_DIR ="memory_gpio_access_library"
 
 EXTRA_MAKEFILE = " -f Makefile"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"

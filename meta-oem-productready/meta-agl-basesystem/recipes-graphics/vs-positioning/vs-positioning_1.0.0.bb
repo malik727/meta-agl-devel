@@ -30,3 +30,6 @@ RDEPENDS_${PN} += " \
 EXTRA_MAKEFILE=" -f Makefile.client"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 MAKE_DIR ="positioning"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"
+
