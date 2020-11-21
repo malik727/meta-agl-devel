@@ -39,3 +39,6 @@ EXTRA_MAKEFILE=" -f Makefile.client"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 MAKE_DIR ="task_manager"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"
+

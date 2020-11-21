@@ -27,3 +27,5 @@ RDEPENDS_${PN} += " \
 EXTRA_MAKEFILE=" -f Makefile.client"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="rom_access_library"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"

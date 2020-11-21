@@ -48,3 +48,5 @@ do_compile_prepend() {
     cd ${S}/${MAKE_DIR}
     oe_runmake -f Makefile.client
 }
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"

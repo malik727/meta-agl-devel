@@ -19,3 +19,5 @@ inherit agl-basesystem-hal
 
 HAL_NAME = "input_hal"
 FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
+
+AGL_BRANCH = "sandbox/ruke47/complete_build"
