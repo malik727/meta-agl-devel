@@ -1,19 +1,18 @@
 SUMMARY = "ns-commonlibrary for AGL software"
 DESCRIPTION = "ns-commonlibrary to build AGL software"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 FILES_${PN} += " \
-    ${LIBDIR}/* \
+    ${libdir}/* \
 "
-FILES_${PN}-dev += "${INCLUDEDIR}/*"
+FILES_${PN}-dev += "${includedir}/*"
  
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=nsframework/;branch=${AGL_BRANCH} \
-           file://0001-cl_error-remover-gettid-inline-declaration.patch"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/native/;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/native"
 
 inherit agl-basesystem-common
 
