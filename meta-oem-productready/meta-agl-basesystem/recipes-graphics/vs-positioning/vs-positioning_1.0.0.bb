@@ -1,20 +1,16 @@
 SUMMARY = "vs-positioning for AGL software"
 DESCRIPTION = "vs-positioning to build AGL software"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-FILES_${PN} += " \
-    ${LIBDIR}/* \
-"
-FILES_${PN}-dev += "${INCLUDEDIR}/*"
+FILES_${PN} += "${libdir}/*"
+FILES_${PN}-staticdev = "${libdir}/*/*.a"
  
-FILES_${PN}-staticdev = "${LIBDIR}/*.a"
- 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=vehicleservice/;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/vehicle/;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/vehicle"
 
 DEPENDS += " \
     ns-frameworkunified \
@@ -34,5 +30,3 @@ RDEPENDS_${PN} += " \
 EXTRA_MAKEFILE=" -f Makefile.client"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 MAKE_DIR ="positioning"
-
-

@@ -11,7 +11,7 @@ SRCREV := "${AGL_DEFAULT_REVISION}"
 PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/stub"
 
-DEPENDS += " ns-frameworkunified"
+DEPENDS += "ns-frameworkunified"
  
 inherit agl-basesystem-common
 
@@ -19,4 +19,3 @@ MAKE_DIR ="communication_subcpu"
 
 EXTRA_MAKEFILE = " -f Makefile"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
-
