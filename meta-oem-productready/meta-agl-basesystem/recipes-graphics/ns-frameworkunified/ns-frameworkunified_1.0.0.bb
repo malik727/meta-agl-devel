@@ -1,7 +1,7 @@
 SUMMARY = "ns-frameworkunified for AGL software"
 DESCRIPTION = "ns-frameworkunified to build AGL software"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 # Common Dependencies
 DEPENDS += " \
@@ -12,11 +12,11 @@ DEPENDS += " \
     boost \
 "
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=nsframework/;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/native/;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/native"
 
 inherit agl-basesystem-common
 
@@ -25,15 +25,15 @@ EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="framework_unified"
 
 FILES_${PN} += " \
-    ${LIBDIR}/* \
+    ${libdir}/* \
     ${CONFDIR}/ns_logger/* \
     ${NVPATH}/files/BS/ns/framework_unified/* \
     ${CONFDIR}/files/BS/ns/framework_unified/rodata/* \
 "
 FILES_${PN}-staticdev += " \
-    ${LIBDIR}/*.a \
+    ${libdir}/*.a \
 "
-FILES_${PN}-dev += "${INCLUDEDIR}/*"
+FILES_${PN}-dev += "${includedir}/*"
 
 
 RDEPENDS_${PN} += " \
