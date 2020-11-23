@@ -1,63 +1,59 @@
 SUMMARY = "Systemd related file for launching sample application"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/agl-systemd/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
-inherit systemd
-S = "${WORKDIR}"
+LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-systemd/;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
-FILES_${PN} += "\
-    ${NVPATH}/tool_9E_SI/* \
-    ${NVPATH}/usr/target/* \
-    /usr/* \
-    ${NVPATH}/* \
-    ${NVPATH}/ramd/bkup \
-    /etc/systemd/system/tmp.mount.d \
-"
+PV = "1.0.0+gitr${SRCPV}"
+S = "${WORKDIR}/agl-systemd"
+
+inherit systemd
+
 SYSTEMD_SERVICE_${PN} = " \
     setup_refhw.service \
     launch_sm.service \
     agl-trigger.service \
 "
+
 DEPENDS += " \
-    libxml2-native \
-    agl-basefiles-native \
-"
-RDEPENDS_${PN} += " \
-    procps \
     agl-basefiles \
+"
+
+RDEPENDS_${PN} += " \
     bash \
 "
-do_compile[depends] += "agl-basefiles:do_populate_sysroot"
+
+do_configure[noexec] = "1"
+do_compile[noexec] = "1"
 
 do_install() {
 	install -d ${D}${systemd_unitdir}/system
-	install -m 644 ${WORKDIR}/agl-systemd/setup_refhw.service ${D}/${systemd_unitdir}/system
-	install -m 644 ${WORKDIR}/agl-systemd/agl-trigger.service ${D}/${systemd_unitdir}/system
-	install -m 644 ${WORKDIR}/agl-systemd/launch_sm.service ${D}/${systemd_unitdir}/system
+	install -m 644 ${S}/setup_refhw.service ${D}/${systemd_unitdir}/system
+	install -m 644 ${S}/agl-trigger.service ${D}/${systemd_unitdir}/system
+	install -m 644 ${S}/launch_sm.service ${D}/${systemd_unitdir}/system
+
 	install -d ${D}/etc/systemd/system
-	install -m 644 ${WORKDIR}/agl-systemd/systemd-udev-trigger.service ${D}/etc/systemd/system
+	install -m 644 ${S}/systemd-udev-trigger.service ${D}/etc/systemd/system
+	install -d ${D}/etc/systemd/system/tmp.mount.d
+	install -m 644 ${S}/options.conf ${D}/etc/systemd/system/tmp.mount.d
+
 	install -d ${D}${NVPATH}/tool_9E_SI
-	install -m 644 ${WORKDIR}/agl-systemd/*.txt ${D}${NVPATH}/tool_9E_SI
-	install -m 755 ${WORKDIR}/agl-systemd/tool_9E_SI/*.sh ${D}${NVPATH}/tool_9E_SI
-	install -d ${D}${NVPATH}/usr/target 
-	install -m 644 ${WORKDIR}/agl-systemd/usr/target/*.lst ${D}${NVPATH}/usr/target
-	install -d ${D}/etc/systemd/system
-        install -d ${D}/lib/udev/rules.d
-	install -m 644 ${WORKDIR}/agl-systemd/99-agl.rules ${D}/lib/udev/rules.d
+
+	install -d ${D}${sysconfdir}/basesystem
+	install -m 644 ${S}/env.txt ${D}${sysconfdir}/basesystem
+
+	install -d ${D}${bindir}
+	install -m 755 ${S}/tool_9E_SI/*.sh ${D}${bindir}
+
+	install -d ${D}${sysconfdir}/basesystem/target 
+	install -m 644 ${S}/usr/target/*.lst ${D}${sysconfdir}/basesystem/target
+
+    install -d ${D}/lib/udev/rules.d
+	install -m 644 ${S}/99-agl.rules ${D}/lib/udev/rules.d
+
 	install -d -m 777 ${D}${NVPATH}/export
 	install -d -m 777 ${D}${NVPATH}/backup
 	install -d -m 777 ${D}${NVPATH}/log/frameworkunifiedlog
 	install -d -m 777 ${D}${NVPATH}/ramd/bkup
-	install -d ${D}/etc/systemd/system/tmp.mount.d
-	install -m 644 ${WORKDIR}/agl-systemd/options.conf ${D}/etc/systemd/system/tmp.mount.d
-}
-
-sysroot_stage_all_append(){
-	sysroot_stage_dir ${D}${NVPATH}/tool_9E_SI ${SYSROOT_DESTDIR}${NVPATH}/tool_9E_SI
-	sysroot_stage_dir ${D}${NVPATH}/usr/target ${SYSROOT_DESTDIR}${NVPATH}/usr/target
-	sysroot_stage_dir ${D}/usr ${SYSROOT_DESTDIR}/usr
-	sysroot_stage_dir ${D}${NVPATH}/ns/npp/rwdata ${SYSROOT_DESTDIR}${NVPATH}/ns/npp/rwdata
-	sysroot_stage_dir ${D}/etc/systemd/system/tmp.mount.d ${SYSROOT_DESTDIR}/etc/systemd/system/tmp.mount.d
 }
