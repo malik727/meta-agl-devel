@@ -1,23 +1,19 @@
 SUMMARY = "agl-service-ss-loggerservice for AGL software"
 DESCRIPTION = "agl-service-ss-loggerservice to build AGL software"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 inherit agl-basesystem-common
 
-CAPABILITY = "cap_dac_override+ep:/usr/files/bin/SS_LoggerService"
+CAPABILITY = "cap_dac_override+ep:/usr/bin//SS_LoggerService"
 
-FILES_${PN} += " \
-    /usr/files/bin/* \
-"
-FILES_${PN}-staticdev += " ${LIBDIR}/*.a "
-FILES_${PN} += "${NVPATH}/files/BS/ss/logger_service/rwdata/frameworkunifiedlog"
+FILES_${PN}-staticdev += "${libdir}/*/*.a"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/system"
 
 DEPENDS += " libtar \
     ss-config \
@@ -51,5 +47,3 @@ RDEPENDS_${PN} += " \
 EXTRA_MAKEFILE = " -f Makefile.server"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="logger_service"
-
-
