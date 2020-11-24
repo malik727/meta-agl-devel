@@ -1,23 +1,20 @@
 SUMMARY = "agl-service-ss-systemmanager for AGL software"
 DESCRIPTION = "agl-service-ss-systemmanager to build AGL software"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/files/bin/SS_SystemManager"
+CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/bin/agl-bs/SS_SystemManager"
 
-FILES_${PN} += " /usr/files/bin/* "
+#FILES_${PN} += "${CONFDIR}/files/BS/ss/system_manager/rwdata/sm_launch.cfg"
+#FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/version.txt"
+#FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/PhaseInfo.txt"
+#FILES_${PN} += "${NVPATH}/files/BS/ss/system_manager/*"
 
-FILES_${PN} += "${CONFDIR}/files/BS/ss/system_manager/rwdata/sm_launch.cfg"
-FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/version.txt"
-FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/PhaseInfo.txt"
-
-FILES_${PN} += "${NVPATH}/files/BS/ss/system_manager/*"
-
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=systemservice/;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/system"
 
 DEPENDS += " \
     agl-service-ss-resourcemanager \
@@ -34,7 +31,8 @@ DEPENDS += " \
     libpower-hal \
     vs-clock \
     vs-diagcode \
-"
+    libxml2-native \
+ "
 
 inherit agl-basesystem-common
 
@@ -59,4 +57,4 @@ EXTRA_MAKEFILE = " -f Makefile.server"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="system_manager"
 
-
+AGL_BRANCH = "sandbox/ruke47/complete_build"
