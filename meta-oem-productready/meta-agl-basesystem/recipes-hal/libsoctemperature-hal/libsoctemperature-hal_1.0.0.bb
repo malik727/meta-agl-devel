@@ -14,6 +14,8 @@ DEPENDS += " ns-frameworkunified"
 inherit agl-basesystem-hal
 
 HAL_NAME = "soc_temperature_hal"
-FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
+#FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
+FILES_${PN} += "/usr/lib/lib${HAL_NAME}.so \
+/usr/lib/basesystem"
 
 AGL_BRANCH = "sandbox/ruke47/complete_build"

@@ -5,10 +5,10 @@ LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468b
 
 CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/bin/agl-bs/SS_SystemManager"
 
-#FILES_${PN} += "${CONFDIR}/files/BS/ss/system_manager/rwdata/sm_launch.cfg"
-#FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/version.txt"
-#FILES_${PN} += "${SHAREDIR}/files/BS/ss/system_manager/rodata/PhaseInfo.txt"
-#FILES_${PN} += "${NVPATH}/files/BS/ss/system_manager/*"
+#FILES_${PN} += "${CONFDIR}/BS/ss/system_manager/rwdata/sm_launch.cfg"
+FILES_${PN} += "${SHAREDIR}/*"
+#FILES_${PN} += "${SHAREDIR}/BS/ss/system_manager/rodata/PhaseInfo.txt"
+#FILES_${PN} += "${LOCALDIR}/nv/BS/ss/system_manager/*"
 
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
 SRCREV := "${AGL_DEFAULT_REVISION}"

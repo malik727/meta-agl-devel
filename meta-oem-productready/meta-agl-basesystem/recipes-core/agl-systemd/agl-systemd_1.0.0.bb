@@ -38,7 +38,7 @@ do_install() {
 	install -d ${D}/etc/systemd/system/tmp.mount.d
 	install -m 644 ${S}/options.conf ${D}/etc/systemd/system/tmp.mount.d
 
-	install -d ${D}${NVPATH}/tool_9E_SI
+	install -d ${D}${LOCALDIR}/tool_9E_SI
 
 	install -d ${D}${sysconfdir}/basesystem
 	install -m 644 ${S}/env.txt ${D}${sysconfdir}/basesystem
@@ -46,14 +46,14 @@ do_install() {
 	install -d ${D}${bindir}
 	install -m 755 ${S}/tool_9E_SI/*.sh ${D}${bindir}
 
-	install -d ${D}${sysconfdir}/basesystem/target 
-	install -m 644 ${S}/usr/target/*.lst ${D}${sysconfdir}/basesystem/target
+	install -d ${D}${CONFDIR}/target 
+	install -m 644 ${S}${CONDIR}/target/*.lst ${D}${CONFDIR}/target
 
     install -d ${D}/lib/udev/rules.d
 	install -m 644 ${S}/99-agl.rules ${D}/lib/udev/rules.d
 
-	install -d -m 777 ${D}${NVPATH}/export
-	install -d -m 777 ${D}${NVPATH}/backup
-	install -d -m 777 ${D}${NVPATH}/log/frameworkunifiedlog
-	install -d -m 777 ${D}${NVPATH}/ramd/bkup
+	install -d -m 777 ${D}${LOCALDIR}/export
+	install -d -m 777 ${D}${LOCALDIR}/backup
+	install -d -m 777 ${D}${LOCALDIR}/log/frameworkunifiedlog
+	install -d -m 777 ${D}${LOCALDIR}/ramd/bkup
 }

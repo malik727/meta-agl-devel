@@ -27,8 +27,8 @@ MAKE_DIR ="framework_unified"
 FILES_${PN} += " \
     ${libdir}/* \
     ${CONFDIR}/ns_logger/* \
-    ${NVPATH}/files/BS/ns/framework_unified/* \
-    ${CONFDIR}/files/BS/ns/framework_unified/rodata/* \
+    ${LOCALDIR}/nv/BS/ns/framework_unified/* \
+    ${CONFDIR}/BS/ns/framework_unified/rodata/* \
 "
 FILES_${PN}-staticdev += " \
     ${libdir}/*.a \

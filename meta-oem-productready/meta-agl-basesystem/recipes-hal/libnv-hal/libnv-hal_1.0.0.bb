@@ -14,6 +14,7 @@ DEPENDS += " ns-frameworkunified"
 inherit agl-basesystem-hal
 
 HAL_NAME = "nv_hal"
+
 FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
 
 AGL_BRANCH = "sandbox/ruke47/complete_build"

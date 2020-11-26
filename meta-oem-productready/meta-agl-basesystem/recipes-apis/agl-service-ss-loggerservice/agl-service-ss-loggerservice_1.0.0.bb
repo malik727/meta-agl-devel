@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468b
 
 inherit agl-basesystem-common
 
-CAPABILITY = "cap_dac_override+ep:/usr/bin//SS_LoggerService"
+CAPABILITY = "cap_dac_override+ep:/usr/bin/SS_LoggerService"
 
 FILES_${PN}-staticdev += "${libdir}/*/*.a"
 
