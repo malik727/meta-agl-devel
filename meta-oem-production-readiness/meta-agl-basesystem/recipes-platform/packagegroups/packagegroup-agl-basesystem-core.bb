@@ -8,4 +8,5 @@ PACKAGES = "\
 	"
 
 RDEPENDS_${PN} += "\
+	agl-basefiles \
 	"
