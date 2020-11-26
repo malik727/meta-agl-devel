@@ -10,7 +10,7 @@ do_install (){
     cd ${S}/hal_api
     install -d ${D}${INCLUDEDIR}
     install -D -m 644 *.h ${D}${INCLUDEDIR}
-    install -d ${D}/usr/lib/basesystem/
+    install -d ${D}${libdir}
 
     cd ${S}
     oe_runmake install
