@@ -1,19 +1,20 @@
-SUMMARY = "ss-taskmanager for AGL software"
-DESCRIPTION = "ss-taskmanager to build AGL software"
+SUMMARY = "agl-service-ss-taskmanager for AGL software"
+DESCRIPTION = "agl-service-ss-taskmanager to build AGL software"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 DEPENDS += " \
     os-rpclibrary-tool-native \
     ss-interfaceunified \
-    ss-romaccesslibrary \
     ss-resourcemanager \
+    ss-romaccesslibrary \
+    ss-taskmanager \
     ns-frameworkunified \
     ns-commonlibrary \
+    os-eventlibrary \
     os-rpclibrary \
     os-vehicleparameterlibrary \
     libxml2-native \
-    expat-native \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
@@ -24,16 +25,21 @@ S = "${WORKDIR}/git/service/system/task_manager"
 
 inherit agl-basesystem-common
 
-BSMAKE_FILE = "Makefile.client"
+BSMAKE_FILE = "Makefile.server"
+EXTRA_OEMAKE += "'RPATHLINK=${STAGING_DIR_TARGET}/usr/lib/basesystem'"
 
-FILES_${PN} += "/usr/lib/basesystem/*.so"
+do_compile_prepend() {
+    oe_runmake -f Makefile.client
+}
 
 RDEPENDS_${PN} += " \
     ss-interfaceunified \
+    ss-resourcemanager \
+    ss-romaccesslibrary \
+    ss-taskmanager \
     ns-frameworkunified \
     ns-commonlibrary \
-    ss-romaccesslibrary \
+    os-eventlibrary \
     os-rpclibrary \
-    ss-resourcemanager \
     os-vehicleparameterlibrary \
 "
