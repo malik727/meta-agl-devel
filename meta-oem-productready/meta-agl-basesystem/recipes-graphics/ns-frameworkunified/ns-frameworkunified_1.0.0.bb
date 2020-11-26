@@ -20,21 +20,24 @@ S = "${WORKDIR}/native"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE=" -f Makefile.client"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="framework_unified"
 
-FILES_${PN} += " \
-    ${libdir}/* \
-    ${CONFDIR}/ns_logger/* \
-    ${NVPATH}/files/BS/ns/framework_unified/* \
-    ${CONFDIR}/files/BS/ns/framework_unified/rodata/* \
-"
-FILES_${PN}-staticdev += " \
-    ${libdir}/*.a \
-"
-FILES_${PN}-dev += "${includedir}/*"
+do_compile (){
+     cd ${S}/${MAKE_DIR}
 
+    # build libNS_FrameworkUnified.so first
+    # then build libNS_XMLConfigParse.so
+     oe_runmake -f Makefile.client
+     oe_runmake -f Makefile.library
+}
+
+do_install (){
+    cd ${S}/${MAKE_DIR}
+    oe_runmake -f Makefile.client DESTDIR=${D} install
+    oe_runmake -f Makefile.library DESTDIR=${D} install
+}
+
+FILES_${PN} += "${libdir}/*"
 
 RDEPENDS_${PN} += " \
     os-posixbasedos001legacylibrary \
