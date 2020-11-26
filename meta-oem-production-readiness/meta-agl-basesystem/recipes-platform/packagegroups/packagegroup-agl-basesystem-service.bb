@@ -15,6 +15,12 @@ RDEPENDS_${PN} += " \
 	os-eventlibrary \
 	os-posixbasedos001legacylibrary \
 	os-rpclibrary \
+	os-vehicleparameterlibrary \
 	ps-communication \
+	ss-config \
+	ss-interfaceunified \
+	ss-resourcemanager \
 	ss-romaccesslibrary \
+	ss-taskmanager \
+	ss-versionlibrary \
     "
