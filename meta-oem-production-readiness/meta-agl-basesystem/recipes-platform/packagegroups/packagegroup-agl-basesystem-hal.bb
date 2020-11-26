@@ -8,4 +8,16 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} += " \
+	libboot-hal \
+	libcan-hal \
+	libclock-hal \
+	libdeck-hal \
+	libinput-hal \
+	libpower-hal \
+	libsecurity-hal \
+	libsoctemperature-hal \
+	libupdate-hal \
+	libusb-hal \
+	libvehicle-hal \
+	libvideo-in-hal \
     "
