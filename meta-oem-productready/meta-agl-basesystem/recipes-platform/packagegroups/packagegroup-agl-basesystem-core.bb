@@ -9,4 +9,5 @@ PACKAGES = "\
 
 RDEPENDS_${PN} += "\
 	agl-basefiles \
+	agl-systemd \
 	"
