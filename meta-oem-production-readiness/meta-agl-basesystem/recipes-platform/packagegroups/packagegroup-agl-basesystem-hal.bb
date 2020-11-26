@@ -13,6 +13,7 @@ RDEPENDS_${PN} += " \
 	libclock-hal \
 	libdeck-hal \
 	libinput-hal \
+	libnv-hal \
 	libpower-hal \
 	libsecurity-hal \
 	libsoctemperature-hal \
