@@ -14,4 +14,4 @@ inherit agl-basesystem-hal
 HAL_NAME = "update_hal"
 FILES_${PN} += "${libdir}"
 
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"

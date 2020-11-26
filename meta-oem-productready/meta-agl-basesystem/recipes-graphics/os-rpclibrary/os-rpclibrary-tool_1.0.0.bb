@@ -28,5 +28,5 @@ do_install (){
 #inherit native nativesdk 
 BBCLASSEXTEND = "native nativesdk"
 
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"
 

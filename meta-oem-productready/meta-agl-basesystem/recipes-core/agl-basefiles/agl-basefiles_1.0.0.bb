@@ -41,4 +41,4 @@ FILES_${PN}-dev += " \
     ${datadir}/basesystem/* \
     ${includedir}/basesystem/* \
 "
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"

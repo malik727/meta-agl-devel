@@ -54,5 +54,5 @@ EXTRA_MAKEFILE=" -f Makefile.server"
 EXTRA_OEMAKE += " ${EXTRA_MAKEFILE} -j 1 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
 MAKE_DIR ="positioning"
 
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"
 

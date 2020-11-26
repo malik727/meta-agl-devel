@@ -42,4 +42,4 @@ RDEPENDS_${PN} += " \
     ns-commonlibrary \
 "
 
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"

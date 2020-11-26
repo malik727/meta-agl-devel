@@ -20,5 +20,5 @@ inherit agl-basesystem-hal
 HAL_NAME = "positioning_hal"
 FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
 
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"
 

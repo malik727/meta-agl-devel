@@ -31,4 +31,4 @@ EXTRA_MAKEFILE=" -f Makefile.client"
 EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
 MAKE_DIR ="interface_unified"
 
-AGL_BRANCH = "sandbox/ruke47/complete_build"
+AGL_BRANCH = "sandbox/Riku.Nomoto/WIP_fixpath"
