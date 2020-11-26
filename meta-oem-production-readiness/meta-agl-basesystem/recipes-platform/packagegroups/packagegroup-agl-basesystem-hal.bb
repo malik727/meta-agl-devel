@@ -14,6 +14,7 @@ RDEPENDS_${PN} += " \
 	libdeck-hal \
 	libinput-hal \
 	libnv-hal \
+	libpositioning-hal \
 	libpower-hal \
 	libsecurity-hal \
 	libsoctemperature-hal \
