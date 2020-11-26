@@ -8,4 +8,9 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} += " \
+	ns-commonlibrary \
+	ns-frameworkunified \
+	ns-loglibrary \
+	os-posixbasedos001legacylibrary \
+	os-rpclibrary \
     "
