@@ -8,6 +8,7 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} += " \
+	ns-backupmanager \
 	ns-commonlibrary \
 	ns-frameworkunified \
 	ns-loglibrary \
@@ -15,4 +16,5 @@ RDEPENDS_${PN} += " \
 	os-posixbasedos001legacylibrary \
 	os-rpclibrary \
 	ps-communication \
+	ss-romaccesslibrary \
     "
