@@ -11,6 +11,7 @@ RDEPENDS_${PN} += " \
 	ns-commonlibrary \
 	ns-frameworkunified \
 	ns-loglibrary \
+	os-eventlibrary \
 	os-posixbasedos001legacylibrary \
 	os-rpclibrary \
     "
