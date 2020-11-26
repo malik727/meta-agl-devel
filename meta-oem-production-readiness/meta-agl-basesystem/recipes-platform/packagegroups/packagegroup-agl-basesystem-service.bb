@@ -23,4 +23,6 @@ RDEPENDS_${PN} += " \
 	ss-romaccesslibrary \
 	ss-taskmanager \
 	ss-versionlibrary \
+	vs-positioning \
+	vs-positioningbaselibrary \
     "
