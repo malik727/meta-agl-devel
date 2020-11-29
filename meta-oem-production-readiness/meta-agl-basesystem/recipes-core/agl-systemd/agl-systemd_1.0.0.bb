@@ -1,27 +1,16 @@
 SUMMARY = "Systemd related file for launching sample application"
-LICENSE     = "Apache-2.0"
+LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
+DEPENDS += " agl-basefiles"
+
+PV = "1.0.0+gitr${SRCPV}"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-systemd;branch=${AGL_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-PV = "1.0.0+gitr${SRCPV}"
 S = "${WORKDIR}/agl-systemd"
 
 inherit systemd
-
-SYSTEMD_SERVICE_${PN} = " \
-    launch_sm.service \
-    agl-trigger.service \
-"
-
-DEPENDS += " \
-    agl-basefiles \
-"
-
-RDEPENDS_${PN} += " \
-    bash \
-"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
@@ -53,3 +42,10 @@ do_install() {
 	install -d -m 777 ${D}${LOCALDIR}/nv/log/frameworkunifiedlog
 	install -d -m 777 ${D}${LOCALDIR}/ramd/bkup
 }
+
+RDEPENDS_${PN} += "bash"
+
+SYSTEMD_SERVICE_${PN} = " \
+    launch_sm.service \
+    agl-trigger.service \
+"

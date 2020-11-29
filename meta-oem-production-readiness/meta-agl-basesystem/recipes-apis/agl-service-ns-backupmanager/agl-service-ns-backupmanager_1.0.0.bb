@@ -2,6 +2,7 @@ SUMMARY = "agl-service-ns-backupmanager for AGL software"
 DESCRIPTION = "agl-service-ns-backupmanager to build AGL software"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+
 DEPENDS += " \
     libxml2-native \
     ns-frameworkunified \
