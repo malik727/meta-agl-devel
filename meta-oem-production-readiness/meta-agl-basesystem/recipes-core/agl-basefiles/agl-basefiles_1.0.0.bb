@@ -23,7 +23,7 @@ do_install() {
 
         install -d ${D}${datadir}/basesystem
         install -m 644 -D ${S}/share/* ${D}${datadir}/basesystem/
-        install -m 755 -D ${S}/bin/launch_xml2cfg.sh ${D}${datadir}/basesystem/
+        install -m 644 -D ${S}/bin/launch_xml2cfg.sh ${D}${datadir}/basesystem/
 
         # LOCALDIR is defined at conf/include/agl-basesystem-base.inc
         install -d ${D}${LOCALDIR}/nv/BS/ns/npp/rwdata/

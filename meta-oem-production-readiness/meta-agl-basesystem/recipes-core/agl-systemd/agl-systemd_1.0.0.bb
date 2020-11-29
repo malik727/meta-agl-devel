@@ -1,8 +1,8 @@
 SUMMARY = "Systemd related file for launching sample application"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-systemd/;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=agl-systemd;branch=${AGL_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
@@ -45,7 +45,7 @@ do_install() {
 	install -d ${D}${CONFDIR}/target
 	install -m 644 ${S}/usr/target/*.lst ${D}${CONFDIR}/target
 
-    install -d ${D}/lib/udev/rules.d
+        install -d ${D}/lib/udev/rules.d
 	install -m 644 ${S}/99-agl.rules ${D}/lib/udev/rules.d
 
 	install -d -m 777 ${D}${LOCALDIR}/nv/export

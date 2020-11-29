@@ -15,6 +15,6 @@ RDEPENDS_${PN} += " \
 	agl-service-ss-powerservice \
 	agl-service-ss-resourcemanager \
 	agl-service-ss-taskmanager \
-	agl-service-vs-positioning \
 	agl-service-ss-systemmanager \
-    "
+	agl-service-vs-positioning \
+"

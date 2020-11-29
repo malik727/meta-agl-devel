@@ -50,6 +50,18 @@ RDEPENDS_${PN} += " \
     vs-clock \
     vs-vehicle \
 "
-EXTRA_MAKEFILE=" -f Makefile.server"
-EXTRA_OEMAKE += " ${EXTRA_MAKEFILE} -j 1 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
+
+EXTRA_MAKEFILE = " -f Makefile.server"
+EXTRA_OEMAKE += " ${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
+
 MAKE_DIR ="positioning"
+
+do_compile () {
+    cd ${S}/${MAKE_DIR}
+    oe_runmake
+}
+
+do_install (){
+    cd ${S}/${MAKE_DIR}
+    oe_runmake DESTDIR=${D} install
+}

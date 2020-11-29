@@ -1,17 +1,7 @@
 SUMMARY = "agl-service-ss-systemmanager for AGL software"
 DESCRIPTION = "agl-service-ss-systemmanager to build AGL software"
-LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
-
-CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/bin/agl-bs/SS_SystemManager"
-
-FILES_${PN} += "${SHAREDIR}/*"
-
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
-SRCREV := "${BASESYSTEM_REVISION}"
-
-PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/system"
+LICENSE = "Apache-2.0"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 DEPENDS += " \
     agl-service-ss-resourcemanager \
@@ -29,9 +19,20 @@ DEPENDS += " \
     vs-clock \
     vs-diagcode \
     libxml2-native \
- "
+"
+
+PV = "1.0.0+gitr${SRCPV}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
+SRCREV := "${BASESYSTEM_REVISION}"
+
+S = "${WORKDIR}/system/system_manager"
 
 inherit agl-basesystem-common
+
+EXTRA_MAKEFILE = " -f Makefile.server"
+EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+
+FILES_${PN} += "/usr/share/*"
 
 RDEPENDS_${PN} += " \
     agl-service-ss-resourcemanager \
@@ -50,6 +51,4 @@ RDEPENDS_${PN} += " \
     vs-diagcode \
 "
 
-EXTRA_MAKEFILE = " -f Makefile.server"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
-MAKE_DIR ="system_manager"
+CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/bin/basesystem/SS_SystemManager"

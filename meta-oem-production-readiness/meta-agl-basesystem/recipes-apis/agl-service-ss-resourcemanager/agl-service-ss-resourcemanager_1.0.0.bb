@@ -1,7 +1,7 @@
 SUMMARY = "agl-service-agl-service-ss-resourcemanager for AGL software"
 DESCRIPTION = "agl-service-agl-service-ss-resourcemanager to build AGL software"
 LICENSE     = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 CAPABILITY = "cap_setuid+ep:/usr/bin/resm"
 
@@ -9,7 +9,7 @@ SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protoc
 SRCREV := "${BASESYSTEM_REVISION}"
 
 PV = "1.0.0+gitr${SRCPV}"
-S = "${WORKDIR}/system"
+S = "${WORKDIR}/system/resource_manager"
 
 DEPENDS += " \
     os-rpclibrary-tool-native \
@@ -21,9 +21,6 @@ DEPENDS += " \
     os-eventlibrary \
     libsoctemperature-hal \
 "
-
-inherit agl-basesystem-common
-
 RDEPENDS_${PN} += " \
     ss-interfaceunified \
     ss-resourcemanager \
@@ -33,12 +30,13 @@ RDEPENDS_${PN} += " \
     os-eventlibrary \
     libsoctemperature-hal \
 "
+
+inherit agl-basesystem-common
+
 EXTRA_MAKEFILE=" -f Makefile.server"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE} -j 1 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
+EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
-MAKE_DIR ="resource_manager"
 
 do_compile_prepend() {
-    cd ${S}/${MAKE_DIR}
     oe_runmake -f Makefile.client
 }
