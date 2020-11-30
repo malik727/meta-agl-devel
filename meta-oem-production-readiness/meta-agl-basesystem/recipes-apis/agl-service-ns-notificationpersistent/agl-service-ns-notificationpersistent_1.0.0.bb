@@ -17,8 +17,7 @@ S = "${WORKDIR}/native/notification_persistent_service"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.server"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile.server"
 
 RDEPENDS_${PN} += " \
     ns-frameworkunified \

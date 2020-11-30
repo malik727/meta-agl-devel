@@ -1,7 +1,7 @@
 SUMMARY = "agl-service-vs-positioning for AGL software"
 DESCRIPTION = "agl-service-vs-positioning to build AGL software"
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://${MAKE_DIR}/LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 DEPENDS += " \
     ss-config \
@@ -25,23 +25,13 @@ PV = "1.0.0+gitr${SRCPV}"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/vehicle;branch=${AGL_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/vehicle"
+S = "${WORKDIR}/vehicle/positioning"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.server"
-EXTRA_OEMAKE += " ${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
 
-MAKE_DIR ="positioning"
-do_compile () {
-    cd ${S}/${MAKE_DIR}
-    oe_runmake
-}
-
-do_install (){
-    cd ${S}/${MAKE_DIR}
-    oe_runmake DESTDIR=${D} install
-}
+EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
+BSMAKE_FILE = "Makefile.server"
 
 FILES_${PN}-staticdev += "${libdir}/*/*.a"
 

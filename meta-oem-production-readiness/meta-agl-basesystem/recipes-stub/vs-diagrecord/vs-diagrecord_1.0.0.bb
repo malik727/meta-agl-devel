@@ -13,8 +13,7 @@ S = "${WORKDIR}/stub/diag_record"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile"
 
 FILES_${PN} += "${libdir}/*"
 FILES_${PN}-staticdev = "${libdir}/*/*.a"

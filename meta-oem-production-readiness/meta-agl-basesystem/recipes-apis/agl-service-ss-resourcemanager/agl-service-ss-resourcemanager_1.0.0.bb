@@ -22,13 +22,22 @@ S = "${WORKDIR}/system/resource_manager"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE=" -f Makefile.server"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
+BSMAKE_FILE = "Makefile.server"
+EXTRA_OEMAKE += "'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbolse' "
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 
-do_compile_prepend() {
-    oe_runmake -f Makefile.client
-}
+# do_compile () {
+#     oe_runmake -f Makefile.client
+#     oe_runmake 
+# }
+
+# do_install (){
+#     oe_runmake DESTDIR=${D} install
+# }
+
+FILES_${PN} += " \
+    ${libdir}/* \
+"
 
 RDEPENDS_${PN} += " \
     ss-interfaceunified \

@@ -13,10 +13,7 @@ S = "${WORKDIR}/other/rpc_library"
 
 EXTRA_OEMAKE = "'CXX=${CXX}' 'CC=${CC}' 'RANLIB=${RANLIB}' 'AR=${AR}' 'LDFLAGS=${LDFLAGS} ${LDLIBS}' 'CFLAGS=${CFLAGS}' 'SDKTARGETSYSROOT=${STAGING_DIR_NATIVE}' -j 1"
 
-do_compile () {
-	cd ./tool
-	oe_runmake
-}
+BSMAKE_FILE = "./tool/Makefile"
 
 do_install () {
 	install -D -m 755 tool/rpc_apidef ${D}${base_prefix}/usr/bin/rpc_apidef

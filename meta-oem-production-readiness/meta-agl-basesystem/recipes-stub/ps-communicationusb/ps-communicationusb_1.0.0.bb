@@ -13,7 +13,6 @@ S = "${WORKDIR}/stub/communication_usb"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile"
 
 FILES_${PN} += "${libdir}/*"

@@ -11,7 +11,6 @@ S = "${WORKDIR}/stub/memory_gpio_access_library"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile"
 
 FILES_${PN} += "${libdir}/*"

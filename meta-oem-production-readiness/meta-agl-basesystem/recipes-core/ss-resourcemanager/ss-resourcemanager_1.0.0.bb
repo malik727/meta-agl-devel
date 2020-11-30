@@ -21,8 +21,8 @@ S = "${WORKDIR}/system/resource_manager"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.client"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
+BSMAKE_FILE = "Makefile.client"
+EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 
 FILES_${PN} += "/usr/lib/basesystem/libresm.so"

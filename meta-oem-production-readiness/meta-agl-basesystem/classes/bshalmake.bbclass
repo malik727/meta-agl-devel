@@ -1,7 +1,4 @@
-#pokyのbase.bbclassではMakefile, makefile, GNUmakefile 以外のMakefileのため定義が必要
-# そのため、独自のdo_compileが必要
-
-# pokyのbase_do_installは空なので定義が必要
+# base_do_install under poky's base.bbclass is empty so definition is needed.
 bshalmake_do_install (){
     oe_runmake install
     

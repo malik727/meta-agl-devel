@@ -18,8 +18,8 @@ S = "${WORKDIR}/vehicle/positioning"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.client"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE} 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
+BSMAKE_FILE = "Makefile.client"
+EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 
 FILES_${PN} += "${libdir}/*"
 FILES_${PN}-staticdev = "${libdir}/*/*.a"

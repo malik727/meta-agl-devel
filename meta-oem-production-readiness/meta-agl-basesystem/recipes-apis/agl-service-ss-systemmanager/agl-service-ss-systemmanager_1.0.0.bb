@@ -29,8 +29,7 @@ S = "${WORKDIR}/system/system_manager"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.server"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile.server"
 
 FILES_${PN} += "/usr/share/*"
 

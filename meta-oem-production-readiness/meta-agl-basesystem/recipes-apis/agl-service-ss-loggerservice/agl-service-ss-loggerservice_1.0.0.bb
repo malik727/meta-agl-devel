@@ -27,8 +27,7 @@ S = "${WORKDIR}/system/logger_service"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.server"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile.server"
 
 FILES_${PN}-staticdev += "${libdir}/*/*.a"
 
