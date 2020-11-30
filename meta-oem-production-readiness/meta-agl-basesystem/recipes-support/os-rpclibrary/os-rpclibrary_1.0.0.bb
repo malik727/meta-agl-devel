@@ -17,20 +17,9 @@ S = "${WORKDIR}/other"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.client"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile.client"
 
 MAKE_DIR ="rpc_library"
-
-do_compile () {
-    cd ${S}/${MAKE_DIR}
-    oe_runmake
-}
-
-do_install (){
-    cd ${S}/${MAKE_DIR}
-    oe_runmake DESTDIR=${D} install
-}
 
 FILES_${PN} += "/usr/lib/basesystem/librpc.so"
 

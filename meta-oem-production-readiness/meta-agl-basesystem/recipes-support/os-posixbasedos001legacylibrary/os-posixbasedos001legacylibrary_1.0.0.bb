@@ -11,8 +11,7 @@ S = "${WORKDIR}/other/posix_based_os001_legacy_library"
 
 inherit agl-basesystem-common
 
-EXTRA_MAKEFILE = " -f Makefile.client"
-EXTRA_OEMAKE += "${EXTRA_MAKEFILE}"
+BSMAKE_FILE = "Makefile.client"
 
 FILES_${PN} += " ${libdir}/* "
 FILES_${PN}-dev += "${includedir}/*"
