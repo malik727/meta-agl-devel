@@ -25,16 +25,13 @@ S = "${WORKDIR}/system/task_manager"
 
 inherit agl-basesystem-common
 
-EXTRA_OEMAKE += "'-f Makefile.server' 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
+BSMAKE_FILE = "Makefile.server"
+EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 
-do_compile () {
+do_compile_prepend() {
+    cd ${S}
     oe_runmake -f Makefile.client
-    oe_runmake
-}
-
-do_install (){
-    oe_runmake DESTDIR=${D} install
 }
 
 RDEPENDS_${PN} += " \

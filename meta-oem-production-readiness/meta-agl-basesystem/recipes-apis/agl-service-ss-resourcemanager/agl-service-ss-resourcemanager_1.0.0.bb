@@ -23,17 +23,13 @@ S = "${WORKDIR}/system/resource_manager"
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.server"
-EXTRA_OEMAKE += "'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbolse' "
+EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 
-# do_compile () {
-#     oe_runmake -f Makefile.client
-#     oe_runmake 
-# }
-
-# do_install (){
-#     oe_runmake DESTDIR=${D} install
-# }
+do_compile_prepend() {
+    cd ${S}
+    oe_runmake -f Makefile.client
+}
 
 FILES_${PN} += " \
     ${libdir}/* \

@@ -11,7 +11,7 @@ DEPENDS += " \
 
 PV = "1.0.0+gitr${SRCPV}"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/other;branch=${AGL_BRANCH}"
-SRCREV := "${AGL_DEFAULT_REVISION}"
+SRCREV := "${BASESYSTEM_REVISION}"
 
 S = "${WORKDIR}/other/rpc_library"
 
