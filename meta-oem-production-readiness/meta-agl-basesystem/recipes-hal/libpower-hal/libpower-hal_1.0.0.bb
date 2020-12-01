@@ -15,3 +15,4 @@ inherit agl-basesystem-hal
 
 HAL_NAME = "power_hal"
 FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
+FILES_${PN}-staticdev = ""
