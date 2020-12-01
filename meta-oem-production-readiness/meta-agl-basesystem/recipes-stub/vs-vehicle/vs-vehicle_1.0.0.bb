@@ -17,3 +17,4 @@ BSMAKE_FILE = "Makefile"
 
 FILES_${PN} += "${libdir}/*"
 FILES_${PN}-staticdev += "${libdir}/*/*.a"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

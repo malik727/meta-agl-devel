@@ -17,3 +17,4 @@ FILES_${PN} += " \
     ${libdir}/* \
 "
 FILES_${PN}-dev += "${includedir}/*"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

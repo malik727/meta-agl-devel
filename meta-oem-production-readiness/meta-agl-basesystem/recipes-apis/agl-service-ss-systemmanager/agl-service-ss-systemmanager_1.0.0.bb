@@ -52,3 +52,4 @@ RDEPENDS_${PN} += " \
 "
 
 CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid,cap_sys_resource+ep:/usr/bin/basesystem/SS_SystemManager"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

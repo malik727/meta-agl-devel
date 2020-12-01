@@ -20,3 +20,4 @@ inherit module
 # The inherit of module.bbclass will automatically name module packages with
 # "kernel-module-" prefix as required by the oe-core build environment.
 RPROVIDES_${PN} += "kernel-module-evk_lib"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

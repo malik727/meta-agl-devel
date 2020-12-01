@@ -13,3 +13,4 @@ inherit agl-basesystem-hal
 
 HAL_NAME = "update_hal"
 FILES_${PN} += "${libdir}"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

@@ -20,14 +20,13 @@ do_install() {
 
         install -d ${D}${datadir}/basesystem
         install -m 644 -D ${S}/share/* ${D}${datadir}/basesystem/
-        install -m 755 -D ${S}/bin/launch_xml2cfg.sh ${D}${datadir}/basesystem/
+
+        install -d ${D}${bindir}/basesystem
+        install -m 755 -D ${S}/bin/launch_xml2cfg.sh ${D}${bindir}/basesystem/
 
         # LOCALDIR is defined at conf/include/agl-basesystem-base.inc
         install -d ${D}${LOCALDIR}/nv/BS/ns/npp/rwdata/
         install -m 644 -D ${S}/BS/ns/npp/rwdata/* ${D}${LOCALDIR}/nv/BS/ns/npp/rwdata/
-
-        install -d ${D}${includedir}/linux
-        install -D -m 0644 ${TMPDIR}/work-shared/${MACHINE}/kernel-build-artifacts/include/generated/autoconf.h ${D}${includedir}/linux/
 }
 
 FILES_${PN} += " \
@@ -40,3 +39,4 @@ FILES_${PN}-dev += " \
 "
 
 BBCLASSEXTEND = "native nativesdk"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

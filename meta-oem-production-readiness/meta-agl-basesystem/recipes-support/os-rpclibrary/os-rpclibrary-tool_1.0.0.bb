@@ -20,3 +20,4 @@ do_install () {
 FILES_${PN} += "${base_prefix}/usr/bin/rpc_apidef"
 
 BBCLASSEXTEND = "native nativesdk"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

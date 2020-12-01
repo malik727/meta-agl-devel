@@ -25,6 +25,7 @@ inherit agl-basesystem-common
 BSMAKE_FILE = "Makefile.server"
 EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
+EXTRA_OEMAKE += "'KERNEL_HEADER_DIR=${STAGING_KERNEL_BUILDDIR}/include'"
 
 do_compile_prepend() {
     cd ${S}
@@ -46,3 +47,4 @@ RDEPENDS_${PN} += " \
 "
 
 CAPABILITY = "cap_setuid+ep:/usr/bin/resm"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

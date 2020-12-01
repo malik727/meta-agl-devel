@@ -16,3 +16,4 @@ inherit agl-basesystem-hal
 HAL_NAME = "power_hal"
 FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
 FILES_${PN}-staticdev = ""
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

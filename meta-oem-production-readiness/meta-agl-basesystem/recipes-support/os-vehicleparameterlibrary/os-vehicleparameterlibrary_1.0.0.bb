@@ -20,3 +20,4 @@ FILES_${PN} += "${libdir}/*"
 RDEPENDS_${PN} += " \
     ns-backupmanager \
 "
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

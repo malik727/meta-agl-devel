@@ -25,3 +25,4 @@ RDEPENDS_${PN} += " \
     ns-commonlibrary \
     ns-loglibrary \
 "
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

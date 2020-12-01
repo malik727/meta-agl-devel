@@ -47,3 +47,4 @@ RDEPENDS_${PN} += " \
 "
 
 CAPABILITY = "cap_sys_nice,cap_setuid,cap_setgid=ep:/usr/bin/tskmgr"
+AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"
