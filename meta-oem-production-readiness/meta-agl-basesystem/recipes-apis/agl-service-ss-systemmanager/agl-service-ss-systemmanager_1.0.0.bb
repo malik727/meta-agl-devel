@@ -19,6 +19,7 @@ DEPENDS += " \
     vs-clock \
     vs-diagcode \
     libxml2-native \
+    libxml-libxml-perl-native \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
