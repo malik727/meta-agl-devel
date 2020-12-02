@@ -29,7 +29,9 @@ inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.server"
 
-FILES_${PN}-staticdev += "${libdir}/*/*.a"
+FILES_${PN}-staticdev += " \
+    ${libdir}/*/*.a \
+"
 
 RDEPENDS_${PN} += " \
     ss-config \

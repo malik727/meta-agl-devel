@@ -7,13 +7,13 @@ DEPENDS += " \
     agl-service-ss-resourcemanager \
     agl-service-ss-loggerservice \
     agl-service-ps-communication \
-    ss-config  \
-    ss-interfaceunified  \
-    ns-commonlibrary  \
-    ns-frameworkunified  \
-    os-vehicleparameterlibrary  \
-    os-posixbasedos001legacylibrary  \
-    os-rpclibrary  \
+    ss-config \
+    ss-interfaceunified \
+    ns-commonlibrary \
+    ns-frameworkunified \
+    os-vehicleparameterlibrary \
+    os-posixbasedos001legacylibrary \
+    os-rpclibrary \
     os-eventlibrary \
     libpower-hal \
     vs-clock \
@@ -32,19 +32,21 @@ inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.server"
 
-FILES_${PN} += "/usr/share/*"
+FILES_${PN} += " \
+    /usr/share/* \
+"
 
 RDEPENDS_${PN} += " \
     agl-service-ss-resourcemanager \
     agl-service-ss-loggerservice \
     agl-service-ps-communication \
-    ss-config  \
-    ss-interfaceunified  \
-    ns-commonlibrary  \
-    ns-frameworkunified  \
-    os-vehicleparameterlibrary  \
-    os-posixbasedos001legacylibrary  \
-    os-rpclibrary  \
+    ss-config \
+    ss-interfaceunified \
+    ns-commonlibrary \
+    ns-frameworkunified \
+    os-vehicleparameterlibrary \
+    os-posixbasedos001legacylibrary \
+    os-rpclibrary \
     os-eventlibrary \
     libpower-hal \
     vs-clock \

@@ -27,7 +27,9 @@ EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--war
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 EXTRA_OEMAKE += "'KERNEL_HEADER_DIR=${STAGING_KERNEL_BUILDDIR}/include'"
 
-FILES_${PN} += "/usr/lib/basesystem/libresm.so"
+FILES_${PN} += " \
+    /usr/lib/basesystem/libresm.so \
+"
 
 RDEPENDS_${PN} += " \
     ns-frameworkunified \

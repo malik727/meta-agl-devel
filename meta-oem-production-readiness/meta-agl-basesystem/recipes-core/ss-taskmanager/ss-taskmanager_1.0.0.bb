@@ -27,7 +27,9 @@ BSMAKE_FILE = "Makefile.client"
 EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
 
-FILES_${PN} += "  /usr/lib/basesystem/*.so"
+FILES_${PN} += " \
+    /usr/lib/basesystem/*.so \
+"
 
 RDEPENDS_${PN} += " \
     ss-interfaceunified \

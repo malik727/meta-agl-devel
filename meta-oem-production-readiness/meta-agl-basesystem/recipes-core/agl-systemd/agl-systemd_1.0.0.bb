@@ -43,7 +43,9 @@ do_install() {
 	install -d -m 777 ${D}${LOCALDIR}/ramd/bkup
 }
 
-RDEPENDS_${PN} += "bash"
+RDEPENDS_${PN} += " \
+    bash \
+"
 
 SYSTEMD_SERVICE_${PN} = " \
     launch_sm.service \

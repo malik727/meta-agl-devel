@@ -22,4 +22,6 @@ sysroot_stage_all_append() {
 	sysroot_stage_dir ${D}${includedir}/elfio ${SYSROOT_DESTDIR}${includedir}/elfio
 }
 
-FILES_${PN}-dev = "${includedir}/elfio/*"
+FILES_${PN}-dev = " \
+    ${includedir}/elfio/* \
+"

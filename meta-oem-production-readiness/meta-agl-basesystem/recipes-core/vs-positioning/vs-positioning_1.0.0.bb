@@ -21,8 +21,12 @@ inherit agl-basesystem-common
 BSMAKE_FILE = "Makefile.client"
 EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 
-FILES_${PN} += "${libdir}/*"
-FILES_${PN}-staticdev = "${libdir}/*/*.a"
+FILES_${PN} += " \
+    ${libdir}/* \
+"
+FILES_${PN}-staticdev = " \
+    ${libdir}/*/*.a \
+"
 
 RDEPENDS_${PN} += " \
     ns-frameworkunified \

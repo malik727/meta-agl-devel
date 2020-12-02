@@ -13,6 +13,10 @@ inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.client"
 
-FILES_${PN} += " ${libdir}/* "
-FILES_${PN}-dev += "${includedir}/*"
+FILES_${PN} += " \
+    ${libdir}/* \
+"
+FILES_${PN}-dev += " \
+    ${includedir}/* \
+"
 AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

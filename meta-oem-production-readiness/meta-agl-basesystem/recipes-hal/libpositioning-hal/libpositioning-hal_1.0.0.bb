@@ -18,5 +18,8 @@ S = "${WORKDIR}/positioning_hal"
 inherit agl-basesystem-hal
 
 HAL_NAME = "positioning_hal"
-FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
+
+FILES_${PN} += " \
+    ${libdir}/lib${HAL_NAME}.so \
+"
 AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

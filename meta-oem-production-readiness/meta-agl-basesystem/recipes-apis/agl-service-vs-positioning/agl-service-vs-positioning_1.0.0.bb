@@ -33,7 +33,9 @@ inherit agl-basesystem-common
 EXTRA_OEMAKE += " 'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
 BSMAKE_FILE = "Makefile.server"
 
-FILES_${PN}-staticdev += "${libdir}/*/*.a"
+FILES_${PN}-staticdev += " \
+    ${libdir}/*/*.a \
+"
 
 RDEPENDS_${PN} += " \
     ss-config \

@@ -3,11 +3,11 @@ LICENSE = "Apache-2.0"
 
 inherit packagegroup
 
-PACKAGES = "\
-	packagegroup-agl-basesystem-core \
-	"
+PACKAGES = " \
+    packagegroup-agl-basesystem-core \
+"
 
-RDEPENDS_${PN} += "\
-	agl-basefiles \
-	agl-systemd \
-	"
+RDEPENDS_${PN} += " \
+    agl-basefiles \
+    agl-systemd \
+"

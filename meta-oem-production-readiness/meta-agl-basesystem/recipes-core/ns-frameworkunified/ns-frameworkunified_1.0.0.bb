@@ -21,7 +21,9 @@ inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.library -f Makefile.client"
 
-FILES_${PN} += "${libdir}/*"
+FILES_${PN} += " \
+    ${libdir}/* \
+"
 
 RDEPENDS_${PN} += " \
     os-posixbasedos001legacylibrary \
