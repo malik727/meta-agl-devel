@@ -1,0 +1,15 @@
+[Unit]
+Description=AGL Simple Container Manager for CES demo
+Requires=weston@.service lxc-net.service
+After=lxc-net.service
+Before=multi-user.target
+
+[Service]
+Type=simple
+Environment="XDG_RUNTIME_DIR=/run/platform/display"
+Environment="WAYLAND_DISPLAY=wayland-host-0"
+ExecStart=/usr/bin/runlxc
+
+[Install]
+WantedBy=multi-user.target
+
