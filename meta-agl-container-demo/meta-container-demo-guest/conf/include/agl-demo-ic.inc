@@ -1,0 +1,4 @@
+DISTRO_FEATURES_append = " agl-demo-ic"
+AGL_CONTAINER_NAME ?= "agl-ic"
+AGL_CONTAINER_MAC_ADDR ?= "00:16:3e:cf:07:ff"
+AGL_CONTAINER_HOSTNAME_APPEND ?= "-ic"
