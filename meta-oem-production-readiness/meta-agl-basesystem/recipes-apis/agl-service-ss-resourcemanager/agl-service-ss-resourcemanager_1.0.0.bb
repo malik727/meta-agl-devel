@@ -47,4 +47,3 @@ RDEPENDS_${PN} += " \
 "
 
 CAPABILITY = "cap_setuid+ep:/usr/bin/resm"
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

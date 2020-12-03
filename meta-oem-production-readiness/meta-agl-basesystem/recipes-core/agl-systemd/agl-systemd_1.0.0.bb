@@ -51,4 +51,3 @@ SYSTEMD_SERVICE_${PN} = " \
     launch_sm.service \
     agl-trigger.service \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

@@ -27,4 +27,3 @@ RDEPENDS_${PN} += " \
     ns-frameworkunified \
     libnv-hal \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

@@ -29,4 +29,3 @@ RDEPENDS_${PN} += " \
     ns-memorygpioaccesslibrary \
 "
 
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

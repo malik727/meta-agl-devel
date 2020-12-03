@@ -19,4 +19,3 @@ FILES_${PN} += " \
 FILES_${PN}-dev += " \
     ${includedir}/* \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

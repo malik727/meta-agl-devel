@@ -34,4 +34,3 @@ RDEPENDS_${PN} += " \
     ss-versionlibrary \
     os-vehicleparameterlibrary \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

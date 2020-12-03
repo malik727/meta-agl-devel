@@ -25,4 +25,3 @@ FILES_${PN} += " \
 "
 
 BBCLASSEXTEND = "native nativesdk"
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

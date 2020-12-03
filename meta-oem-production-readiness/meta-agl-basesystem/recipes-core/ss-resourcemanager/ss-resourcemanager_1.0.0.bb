@@ -40,4 +40,3 @@ RDEPENDS_${PN} += " \
     os-eventlibrary \
     libsoctemperature-hal \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

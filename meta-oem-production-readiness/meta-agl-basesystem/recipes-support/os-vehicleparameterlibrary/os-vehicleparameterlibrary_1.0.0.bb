@@ -24,4 +24,3 @@ FILES_${PN} += " \
 RDEPENDS_${PN} += " \
     ns-backupmanager \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

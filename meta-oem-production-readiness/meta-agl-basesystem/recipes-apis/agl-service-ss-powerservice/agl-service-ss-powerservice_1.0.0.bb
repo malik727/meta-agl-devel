@@ -26,4 +26,3 @@ RDEPENDS_${PN} += " \
     ns-frameworkunified \
     os-posixbasedos001legacylibrary \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

@@ -20,4 +20,3 @@ HAL_NAME = "video_in_hal"
 FILES_${PN} += " \
     ${libdir}/lib${HAL_NAME}.so \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

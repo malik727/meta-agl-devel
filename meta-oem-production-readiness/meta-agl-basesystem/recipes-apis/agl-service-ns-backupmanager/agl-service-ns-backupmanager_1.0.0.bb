@@ -33,4 +33,3 @@ RDEPENDS_${PN} += " \
 "
 
 CAPABILITY = "cap_dac_override+ep:/usr/bin/NS_BackupMgr"
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

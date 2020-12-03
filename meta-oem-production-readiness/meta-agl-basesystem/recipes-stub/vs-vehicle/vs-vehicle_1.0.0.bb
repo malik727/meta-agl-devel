@@ -23,4 +23,3 @@ FILES_${PN} += " \
 FILES_${PN}-staticdev += " \
     ${libdir}/*/*.a \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

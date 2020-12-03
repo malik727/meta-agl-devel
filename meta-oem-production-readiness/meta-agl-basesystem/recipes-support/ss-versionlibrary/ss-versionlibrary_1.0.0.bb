@@ -28,4 +28,3 @@ RDEPENDS_${PN} += " \
     ss-interfaceunified \
     ss-romaccesslibrary \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

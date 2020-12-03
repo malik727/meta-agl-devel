@@ -22,4 +22,3 @@ inherit module
 RPROVIDES_${PN} += " \
     kernel-module-evk_lib \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

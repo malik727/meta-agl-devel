@@ -28,4 +28,3 @@ RDEPENDS_${PN} += " \
     os-eventlibrary \
     os-vehicleparameterlibrary \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"

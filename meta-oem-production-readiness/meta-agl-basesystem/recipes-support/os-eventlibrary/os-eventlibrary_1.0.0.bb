@@ -20,4 +20,3 @@ FILES_${PN} += " \
 RDEPENDS_${PN} += " \
     kernel-module-evklib \
 "
-AGL_BRANCH="sandbox/Riku.Nomoto/WIP_20201201"
