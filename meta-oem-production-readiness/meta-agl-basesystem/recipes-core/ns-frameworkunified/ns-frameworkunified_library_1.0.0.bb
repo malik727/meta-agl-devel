@@ -19,7 +19,7 @@ S = "${WORKDIR}/native/framework_unified"
 
 inherit agl-basesystem-common
 
-BSMAKE_FILE = "Makefile.library -f Makefile.client"
+BSMAKE_FILE = "Makefile.library"
 
 FILES_${PN} += " \
     ${libdir}/* \
