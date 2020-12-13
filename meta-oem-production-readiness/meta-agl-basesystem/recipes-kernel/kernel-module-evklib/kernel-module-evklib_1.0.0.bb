@@ -1,22 +1,31 @@
 #
 # "kernel module for libev" recipe
 #
-
 SUMMARY = "libev kernel module for AGL software"
 DESCRIPTION = "libev kernel module build AGL software"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
+LIC_FILES_CHKSUM = "file://LICENSE.GPL-2.0-only;md5=4ee23c52855c222cba72583d301d2338"
 
-KERNEL_MODULE_AUTOLOAD += "evk_lib"
+DEPENDS += " \
+    agl-basefiles \
+"
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=module/kernel-module-evklib;branch=${AGL_BRANCH}"
-SRCREV := "${BASESYSTEM_REVISION}"
+# SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=module/kernel-module-evklib;branch=${AGL_BRANCH}"
+# SRCREV := "${BASESYSTEM_REVISION}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=module/kernel-module-evklib;branch="sandbox/Riku.Nomoto/test_kernel_module""
+SRCREV := "a3f32b3224409c5f702597f2903f329ef51aa42f"
 
 S = "${WORKDIR}/kernel-module-evklib"
 
 inherit module
 
+EXTRA_OEMAKE += "COMMON_HEADER_DIR=${STAGING_INCDIR}/basesystem"
+
 # The inherit of module.bbclass will automatically name module packages with
 # "kernel-module-" prefix as required by the oe-core build environment.
-RPROVIDES_${PN} += "kernel-module-evk_lib"
+RPROVIDES_${PN} += " \
+    kernel-module-evk_lib \
+"
+
+KERNEL_MODULE_AUTOLOAD += "evk_lib"
