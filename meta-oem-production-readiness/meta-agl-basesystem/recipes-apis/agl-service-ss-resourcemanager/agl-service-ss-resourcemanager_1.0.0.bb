@@ -15,16 +15,17 @@ DEPENDS += " \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/system/resource_manager"
+S = "${WORKDIR}/git/service/system/resource_manager"
 
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.server"
 EXTRA_OEMAKE += "'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols' "
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
+EXTRA_OEMAKE += "'RPATHLINK=${STAGING_DIR_HOST}/usr/lib:${STAGING_DIR_HOST}/lib:${STAGING_DIR_HOST}/usr/lib/basesystem'"
 
 TARGET_CFLAGS_append = " -I${STAGING_KERNEL_BUILDDIR}/include "
 do_compile[depends] += "virtual/kernel:do_shared_workdir"

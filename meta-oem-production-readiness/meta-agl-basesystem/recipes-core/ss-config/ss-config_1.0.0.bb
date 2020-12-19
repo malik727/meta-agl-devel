@@ -13,10 +13,10 @@ DEPENDS += " \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/system/config"
+S = "${WORKDIR}/git/service/system/config"
 
 inherit agl-basesystem-common
 

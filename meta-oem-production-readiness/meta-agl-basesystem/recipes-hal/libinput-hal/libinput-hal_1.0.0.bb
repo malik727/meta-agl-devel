@@ -10,10 +10,10 @@ DEPENDS += " \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=hal/input_hal;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/input_hal"
+S = "${WORKDIR}/git/hal/input_hal"
 
 inherit agl-basesystem-hal
 

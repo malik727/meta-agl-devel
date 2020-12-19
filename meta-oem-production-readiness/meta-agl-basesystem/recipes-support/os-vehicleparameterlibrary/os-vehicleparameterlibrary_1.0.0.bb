@@ -6,10 +6,10 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 DEPENDS += " ns-backupmanager"
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/other;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/other/vehicle_parameter_library"
+S = "${WORKDIR}/git/service/other/vehicle_parameter_library"
 
 inherit agl-basesystem-common
 

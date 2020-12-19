@@ -11,16 +11,18 @@ DEPENDS += " \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/system/interface_unified"
+S = "${WORKDIR}/git/service/system/interface_unified"
 
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.client"
 
 FILES_${PN} += "${libdir}/*"
+
+DIRFILES = "1"
 
 RDEPENDS_${PN} += " \
     ns-commonlibrary \

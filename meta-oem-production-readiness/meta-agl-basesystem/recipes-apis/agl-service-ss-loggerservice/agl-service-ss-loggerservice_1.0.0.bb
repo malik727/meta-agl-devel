@@ -20,14 +20,15 @@ DEPENDS += " libtar \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/system/logger_service"
+S = "${WORKDIR}/git/service/system/logger_service"
 
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.server"
+EXTRA_OEMAKE += "'RPATHLINK=${STAGING_DIR_HOST}/usr/lib:${STAGING_DIR_HOST}/lib:${STAGING_DIR_HOST}/usr/lib/basesystem'"
 
 FILES_${PN}-staticdev += "${libdir}/*/*.a"
 

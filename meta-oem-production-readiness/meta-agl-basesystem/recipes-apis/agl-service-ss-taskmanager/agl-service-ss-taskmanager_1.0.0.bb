@@ -18,16 +18,17 @@ DEPENDS += " \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;subpath=service/system;branch=${AGL_BRANCH}"
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/system/task_manager"
+S = "${WORKDIR}/git/service/system/task_manager"
 
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.server"
 EXTRA_OEMAKE += "'CXX=${CXX} -Wl,--warn-unresolved-symbols' 'CC=${CC} -Wl,--warn-unresolved-symbols'"
 EXTRA_OEMAKE += "'OECORE_NATIVE_SYSROOT=${STAGING_DIR_NATIVE}'"
+EXTRA_OEMAKE += "'RPATHLINK=${STAGING_DIR_HOST}/usr/lib:${STAGING_DIR_HOST}/lib:${STAGING_DIR_HOST}/usr/lib/basesystem'"
 
 do_compile_prepend() {
     oe_runmake -f Makefile.client
