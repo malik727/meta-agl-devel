@@ -19,6 +19,8 @@ DEPENDS += " \
     vs-clock \
     vs-diagcode \
     libxml2-native \
+    agl-basefiles-native \
+    libxml-xpath-perl-native \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
@@ -27,7 +29,7 @@ SRCREV := "${BASESYSTEM_REVISION}"
 
 S = "${WORKDIR}/git/service/system/system_manager"
 
-inherit agl-basesystem-common
+inherit agl-basesystem-common perlnative
 
 BSMAKE_FILE = "Makefile.server"
 EXTRA_OEMAKE += "'RPATHLINK=${STAGING_DIR_HOST}/usr/lib:${STAGING_DIR_HOST}/lib:${STAGING_DIR_HOST}/usr/lib/basesystem'"
