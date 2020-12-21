@@ -27,14 +27,8 @@ do_install() {
 }
 
 do_install_class-native() {
-        install -d ${D}${includedir}/basesystem
-        install -m 644 -D ${S}/include/* ${D}${includedir}/basesystem/
-
         install -d ${D}${bindir}
         install -m 755 -D ${S}/bin/launch_xml2cfg.sh ${D}${bindir}/
-
-        install -d ${D}${datadir}/basesystem
-        install -m 644 -D ${S}/share/* ${D}${datadir}/basesystem/
 }
 
 FILES_${PN} += " \
