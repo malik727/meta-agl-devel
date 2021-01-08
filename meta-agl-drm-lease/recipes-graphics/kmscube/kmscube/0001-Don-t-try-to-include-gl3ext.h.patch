@@ -1,0 +1,23 @@
+From ece613c1e689e043ed48c5b0b13e5e1cb20c949d Mon Sep 17 00:00:00 2001
+From: Damian Hobson-Garcia <dhobsong@igel.co.jp>
+Date: Wed, 16 Dec 2020 11:08:25 +0900
+Subject: [PATCH] Don't try to include gl3ext.h
+
+gl2ext.h should be used instead
+---
+ texturator.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/texturator.c b/texturator.c
+index 555f81f..3d09e9e 100644
+--- a/texturator.c
++++ b/texturator.c
+@@ -30,7 +30,7 @@
+ #include <math.h>
+ 
+ #include <GLES3/gl3.h>
+-#include <GLES3/gl3ext.h>
++#include <GLES3/gl2ext.h>
+ 
+ #ifdef HAVE_LIBPNG
+ #include <png.h>
