@@ -17,12 +17,6 @@ This will add the `drm-lease-manager` package to the image, and will add DRM
 lease support to some packages.
 
 Currently, only the `kmscube` sample application has support for DRM lease.  
-`kmscube` is not included in the image by default. To add the package to the
-image, add the following to your local.conf
-
-```
-IMAGE_INSTALL_append = " kmscube"
-```
 
 ## Starting the DRM lease manager
 
