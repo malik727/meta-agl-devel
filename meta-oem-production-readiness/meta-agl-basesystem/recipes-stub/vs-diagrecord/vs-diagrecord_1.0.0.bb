@@ -16,4 +16,4 @@ inherit agl-basesystem-common
 BSMAKE_FILE = "Makefile"
 
 FILES_${PN} += "${libdir}/*"
-FILES_${PN}-staticdev = "${libdir}/*/*.a"
+FILES_${PN}-staticdev = "${libdir}/*.a"
