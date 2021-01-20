@@ -1,36 +1,28 @@
-SUMMARY = "ss-resourcemanager for AGL software"
-DESCRIPTION = "ss-resourcemanager to build AGL software"
+SUMMARY = "vs-positioningbaselibrary for AGL software"
+DESCRIPTION = "vs-positioningbaselibrary to build AGL software"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 DEPENDS += " \
-    os-rpclibrary-tool-native \
-    ss-interfaceunified \
     ns-frameworkunified \
-    ns-commonlibrary \
-    os-rpclibrary \
     os-eventlibrary \
-    libsoctemperature-hal \
+    os-vehicleparameterlibrary \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/git/service/system/resource_manager"
+S = "${WORKDIR}/git/service/vehicle/positioning_base_library"
 
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.client"
 
-FILES_${PN} += "/usr/lib/libresm.so"
+FILES_${PN} += "${libdir}/*"
 
 RDEPENDS_${PN} += " \
     ns-frameworkunified \
-    ss-interfaceunified \
-    ns-commonlibrary \
-    ns-frameworkunified \
-    os-rpclibrary \
     os-eventlibrary \
-    libsoctemperature-hal \
+    os-vehicleparameterlibrary \
 "

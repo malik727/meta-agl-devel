@@ -1,5 +1,5 @@
-SUMMARY = "libcan_hal for AGL software"
-DESCRIPTION = "install libcan_hal to build AGL software"
+SUMMARY = "vs-clock for AGL software"
+DESCRIPTION = "vs-clock to build AGL software"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
@@ -9,9 +9,10 @@ PV = "1.0.0+gitr${SRCPV}"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/git/hal/can_hal"
+S = "${WORKDIR}/git/stub/clock"
 
-inherit bshalmake
+inherit agl-basesystem-common
 
-HAL_NAME = "can_hal"
-FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"
+BSMAKE_FILE = "Makefile.client"
+
+FILES_${PN} += "${libdir}/*"

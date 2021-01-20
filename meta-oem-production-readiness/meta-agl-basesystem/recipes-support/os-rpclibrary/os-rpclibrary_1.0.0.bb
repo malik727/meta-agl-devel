@@ -20,7 +20,7 @@ inherit agl-basesystem-common
 BSMAKE_FILE = "Makefile.client"
 
 FILES_${PN} += " \
-    /usr/lib/basesystem/librpc.so \
+    /usr/lib/librpc.so \
 "
 
 RDEPENDS_${PN} += " \

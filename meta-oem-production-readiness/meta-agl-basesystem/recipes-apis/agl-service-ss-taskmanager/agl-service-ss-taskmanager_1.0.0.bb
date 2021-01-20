@@ -1,36 +1,44 @@
-SUMMARY = "ss-resourcemanager for AGL software"
-DESCRIPTION = "ss-resourcemanager to build AGL software"
+SUMMARY = "agl-service-ss-taskmanager for AGL software"
+DESCRIPTION = "agl-service-ss-taskmanager to build AGL software"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2ee41112a44fe7014dce33e26468ba93"
 
 DEPENDS += " \
     os-rpclibrary-tool-native \
     ss-interfaceunified \
+    ss-resourcemanager \
+    ss-romaccesslibrary \
+    ss-taskmanager \
     ns-frameworkunified \
     ns-commonlibrary \
-    os-rpclibrary \
     os-eventlibrary \
-    libsoctemperature-hal \
+    os-rpclibrary \
+    os-vehicleparameterlibrary \
+    libxml2-native \
 "
 
 PV = "1.0.0+gitr${SRCPV}"
 SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protocol=https;branch=${BASESYSTEM_BRANCH}"
 SRCREV := "${BASESYSTEM_REVISION}"
 
-S = "${WORKDIR}/git/service/system/resource_manager"
+S = "${WORKDIR}/git/service/system/task_manager"
 
 inherit agl-basesystem-common
 
-BSMAKE_FILE = "Makefile.client"
+BSMAKE_FILE = "Makefile.server"
 
-FILES_${PN} += "/usr/lib/libresm.so"
+do_compile_prepend() {
+    oe_runmake -f Makefile.client
+}
 
 RDEPENDS_${PN} += " \
-    ns-frameworkunified \
     ss-interfaceunified \
-    ns-commonlibrary \
+    ss-resourcemanager \
+    ss-romaccesslibrary \
+    ss-taskmanager \
     ns-frameworkunified \
-    os-rpclibrary \
+    ns-commonlibrary \
     os-eventlibrary \
-    libsoctemperature-hal \
+    os-rpclibrary \
+    os-vehicleparameterlibrary \
 "
