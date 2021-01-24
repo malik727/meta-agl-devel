@@ -20,9 +20,6 @@ inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.client"
 
-FILES_${PN} += "${libdir}/*"
-FILES_${PN}-staticdev = "${libdir}/*/*.a"
-
 RDEPENDS_${PN} += " \
     ns-frameworkunified \
     os-vehicleparameterlibrary \

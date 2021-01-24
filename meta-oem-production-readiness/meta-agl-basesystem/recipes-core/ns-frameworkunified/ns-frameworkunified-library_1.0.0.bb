@@ -19,8 +19,6 @@ inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.library"
 
-FILES_${PN} += "${libdir}/*.so"
-
 RDEPENDS_${PN} += " \
     os-posixbasedos001legacylibrary \
     ns-loglibrary \

@@ -14,5 +14,3 @@ S = "${WORKDIR}/git/stub/clock"
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile.client"
-
-FILES_${PN} += "${libdir}/*"

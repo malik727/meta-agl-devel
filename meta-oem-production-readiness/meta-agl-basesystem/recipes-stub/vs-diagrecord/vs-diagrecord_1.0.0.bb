@@ -14,6 +14,3 @@ S = "${WORKDIR}/git/stub/diag_record"
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile"
-
-FILES_${PN} += "${libdir}/*"
-FILES_${PN}-staticdev = "${libdir}/*.a"

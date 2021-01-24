@@ -14,4 +14,3 @@ S = "${WORKDIR}/git/hal/deck_hal"
 inherit bshalmake
 
 HAL_NAME = "deck_hal"
-FILES_${PN} += "${libdir}/lib${HAL_NAME}.so"

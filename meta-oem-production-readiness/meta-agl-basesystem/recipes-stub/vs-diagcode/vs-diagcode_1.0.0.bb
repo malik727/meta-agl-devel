@@ -10,9 +10,7 @@ SRC_URI = "git://gerrit.automotivelinux.org/gerrit/staging/basesystem.git;protoc
 SRCREV := "${BASESYSTEM_REVISION}"
 
 S = "${WORKDIR}/git/stub/diag_code"
- 
+
 inherit agl-basesystem-common
 
 BSMAKE_FILE = "Makefile"
-
-FILES_${PN} += "${libdir}/*"
