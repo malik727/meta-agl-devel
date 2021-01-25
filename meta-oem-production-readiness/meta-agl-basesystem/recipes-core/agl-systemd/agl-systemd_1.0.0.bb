@@ -17,6 +17,7 @@ do_install() {
     install -d ${D}/etc/systemd/system/
     install -m 644 ${S}/launch_sm.service ${D}/etc/systemd/system/
     install -m 644 ${S}/systemd-udev-trigger.service ${D}/etc/systemd/system/
+    install -m 644 ${S}/setup_refhw.service ${D}/etc/systemd/system/
 
     install -d ${D}${CONFDIR}/
     install -m 644 ${S}/env.txt ${D}${CONFDIR}/
@@ -33,4 +34,5 @@ RDEPENDS_${PN} += "bash"
 SYSTEMD_SERVICE_${PN} = " \
     launch_sm.service \
     systemd-udev-trigger.service \
+    setup_refhw.service \
 "
