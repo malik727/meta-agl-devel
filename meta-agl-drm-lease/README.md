@@ -16,7 +16,9 @@ with aglsetup.sh.
 This will add the `drm-lease-manager` package to the image, and will add DRM
 lease support to some packages.
 
-Currently, only the `kmscube` sample application has support for DRM lease.  
+This layer contains patches to add DRM lease support to the following packages
+ * weston
+ * kmscube
 
 ## Starting the DRM lease manager
 
@@ -30,6 +32,22 @@ Shut down any running window systems (eg. weston or agl-compositor) and run:
 This will create 1 lease for each output connection on the platform.
 The name of each lease will be in the form of `card0-<output name>`
 (eg. `card0-LVDS-1` or `card0-HDMI-A-1`)
+
+## Running weston
+
+To enable DRM leases in weston, set the following environemnt variable
+```
+  # export WESTON_DRM_LEASE=1
+```
+
+Once set, weston can be started on any available DRM lease by running with the
+`--drm-lease=<lease name>` option. Eg:
+```
+  # weston --drm-lease=card0-HDMI-A-1
+```
+
+Note: VT switching is disabled when using DRM lease mode, so the `--tty` flag is
+not necessary.
 
 ## Running kmscube sample
 
