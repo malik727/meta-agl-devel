@@ -6,9 +6,9 @@ SRC_URI_append = " \
     file://100_compositor.cfg \
     "
 
-SRC_URI += "${@bb.utils.contains('DISTRO_FEATURES', 'agl-demo-ivi', 'file://101_snd.cfg', '', d)}"
-SRC_URI += "${@bb.utils.contains('DISTRO_FEATURES', 'agl-demo-ivi', 'file://102_usb.cfg', '', d)}"
-SRC_URI += "${@bb.utils.contains('DISTRO_FEATURES', 'agl-demo-ivi', 'file://103_urandom.cfg', '', d)}"
+SRC_URI += "${@bb.utils.contains('AGL_FEATURES', 'agl-demo-ivi', 'file://101_snd.cfg', '', d)}"
+SRC_URI += "${@bb.utils.contains('AGL_FEATURES', 'agl-demo-ivi', 'file://102_usb.cfg', '', d)}"
+SRC_URI += "${@bb.utils.contains('AGL_FEATURES', 'agl-demo-ivi', 'file://103_urandom.cfg', '', d)}"
 
 do_install_append() {
     # override network interface configuration

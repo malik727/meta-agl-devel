@@ -1,6 +1,9 @@
 OVERRIDES .= ":agl-container-host"
 DISTRO_FEATURES_append = " agl-container-host"
 
+# tar.xz is convinient to write rootfs to specific partition of sdcard
+AGL_DEFAULT_IMAGE_FSTYPES_rcar-gen3 ="tar.xz"
+
 #
 # QEMU + VirGL(GPU acceleration) + Multiple monitors
 #
