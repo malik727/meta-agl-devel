@@ -47,7 +47,7 @@ cf. [2 Downloading AGL Software](https://docs.automotivelinux.org/en/master/#0_G
 
 ## Patch agl-demo container integration
 
-Patches are uploaded as [sandbox branch](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl-devel.git;a=shortlog;h=refs/heads/sandbox/ruke47/ces2020_koi) of `meta-agl-devel`, and following commits are mandatory (need to be merged).
+Patches are uploaded as [sandbox branch](https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl-devel.git;a=shortlog;h=refs/heads/sandbox/ruke47/agl-container-demo) of `meta-agl-devel`, and following commits are mandatory (need to be merged).
 
 ```
 Projects Overview
@@ -61,14 +61,15 @@ meta-agl-devel
                                       - 23a5e2ad agl-container-demo: setup passthrough device of IVI
                                       - 36972cf4 agl-container-demo: simple container manager, lxc-launcher
                                       - 01a1ee90 agl-container-demo: Remove title and border
-                                      - e273e5cc Hack
+                                      - 6b331761 agl-container: quick hack to port patchset to Kooky Koi
+                                      - xxxxxxxx agl-container: update README
 ```
 
 e.g.
 ```
 repo start agl-container-demo meta-agl-devel
 cd meta-agl-devel
-git merge agl/sandbox/ruke47/ces2020_koi
+git merge agl/sandbox/ruke47/agl-container-demo
 ```
 
 # AGL Demo Host environment
