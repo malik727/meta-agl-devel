@@ -4,32 +4,6 @@
   - AGL UCB Release: Kooky Koi
   - Board: RCar-Gen3 H3 SK (+KF)
 
-### BUGS & TODO
-
-- cannot start agl-compositor on guest with GL renderer
-
-The following is compositor.log on guest
-```
-[10:26:03.107] EGL_KHR_surfaceless_context available
-[10:26:03.239] failed to create context
-[10:26:03.239] EGL error state: EGL_BAD_ALLOC (0x3003)
-[10:26:03.239] EGL error state: EGL_SUCCESS (0x3000)
-[10:26:03.241] Failed to initialize the GL renderer; falling back to pixman.
-```
-Expectation is like following
-```
-[03:06:45.165] EGL_KHR_surfaceless_context available
-[03:06:45.195] GL version: OpenGL ES 3.2 build 1.11@5516664
-[03:06:45.195] GLSL version: OpenGL ES GLSL ES 3.20 build 1.11@5516664
-[03:06:45.195] GL vendor: Imagination Technologies
-[03:06:45.195] GL renderer: PowerVR Rogue GX6650
-```
-
-- cannot launch any Qt apps on guest 
-
- It looks like same cause of agl-compositor's GL renderer error.
-
-
 # Setup AGL meta layers
 
 ## Download AGL UCB reelase
@@ -62,7 +36,9 @@ meta-agl-devel
                                       - 36972cf4 agl-container-demo: simple container manager, lxc-launcher
                                       - 01a1ee90 agl-container-demo: Remove title and border
                                       - 6b331761 agl-container: quick hack to port patchset to Kooky Koi
-                                      - xxxxxxxx agl-container: update README
+                                      - d88ed98b agl-container: update README
+                                      - 0576a7eb Missing binding /dev/pvr_sync
+                                      - xxxxxxxx agl-compositor: update README.m
 ```
 
 e.g.
@@ -215,14 +191,14 @@ h3ulcb:/etc/lxc# cd
 Then, run lxc-launcher.
 
 ```
-h3ulcb:~# systemctrl restart lxc-network
+h3ulcb:~# systemctrl restart lxc-net
 h3ulcb:~# export XDG_RUNTIME_DIR=/run/platform/display
 h3ulcb:~# export WAYLAND_DISPLAY=wayland-host-0
 h3ulcb:~# /usr/bin/runlxc 
 ```
 
-Sometime race condition happens between weston and lxc-network and it blocks
-`lxc-start`. To prevent this, restart lxc-network before 
+Sometime race condition happens between `weston@display` and
+`lxc-net` and it blocks`lxc-start`. To prevent this, restart lxc-network before
 starting guest image.
 
 ## Option 2. debug each lxc container image
