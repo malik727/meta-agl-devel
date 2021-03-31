@@ -1,13 +1,15 @@
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
 
-SRC_URI = "git://gerrit.automotivelinux.org/gerrit/src/drm-lease-manager;protocol=https;branch=${AGL_BRANCH} \
+BRANCH = "sandbox/dhobsong/keep-lease-on-disconnect"
+
+SRC_URI = "git://gerrit.automotivelinux.org/gerrit/src/drm-lease-manager;protocol=https;branch=${BRANCH} \
            file://drm-lease-manager.service \
            file://run-ptest \
            "
 
 PV = "0.1+git${SRCPV}"
-SRCREV = "60c7658242a41221355bc92f8e6822fc6476e59c"
+SRCREV = "2213b208db1d4d2a8cdcb52f50a154b0c9ea2512"
 
 S = "${WORKDIR}/git"
 
