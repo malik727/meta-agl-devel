@@ -56,6 +56,13 @@ do_install(){
     install -m 0644 ${i} ${D}${libdir}/
   done
 
+  for j in base chain decoder feat fstext gmm gst-plugin hmm itf ivector kws lat lm matrix nnet nnet2 nnet3 online online2 rnnlm sgmm2 tfrnnlm transform tree util cudadecoder  cudadecoderbin  cudafeat  cudamatrix ; do
+    install -d ${D}${includedir}/kaldi/$j
+    for i in $j/*.h ; do 
+      install -m 0644 $i ${D}${includedir}/kaldi/$j/
+    done
+  done
+
 }
 
 ERROR_QA:remove = "rpaths"

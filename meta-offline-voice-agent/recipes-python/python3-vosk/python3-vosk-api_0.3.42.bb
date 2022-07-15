@@ -19,6 +19,7 @@ DEPENDS += " \
     python3-tqdm-native \
     python3-requests-native \
     python3-pip-native \
+    python3-charset-normalizer-native \
 "
 
 # We still need 'sounddevice' based on PortAudio (GitHub: https://github.com/spatialaudio/python-sounddevice/)
