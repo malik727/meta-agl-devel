@@ -25,6 +25,10 @@ IMAGE_INSTALL += " \
     kernel-module-xt-multiport \
 "
 
+IMAGE_FEATURES:append = "\
+    ssh-server-openssh \
+"
+
 # network manager to use
 VIRTUAL-RUNTIME_net_manager = "systemd"
 
