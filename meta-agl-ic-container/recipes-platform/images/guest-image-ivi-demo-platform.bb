@@ -6,5 +6,6 @@ require guest-image-minimal.bb
 IMAGE_INSTALL:append = " \
     agl-compositor-init \
     agl-compositor \
+    cluster-dashboard \
     packagegroup-agl-ic-demo-platform \
 "
