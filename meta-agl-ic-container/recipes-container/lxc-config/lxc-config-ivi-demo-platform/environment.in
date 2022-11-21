@@ -1,0 +1,3 @@
+# lxc environment variable setting
+lxc.environment = PIPEWIRE_RUNTIME_DIR=/var
+

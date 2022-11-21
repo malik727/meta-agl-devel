@@ -1,0 +1,8 @@
+# lxc basic setting
+lxc.rootfs.path = dir:/var/lib/machines/ivi-demo-platform
+lxc.signal.halt = SIGRTMIN+3
+lxc.signal.reboot = SIGTERM
+lxc.uts.name = "ivi-demo-platform"
+lxc.tty.max = 6
+lxc.pty.max = 1
+lxc.cap.drop = sys_module mac_admin mac_override sys_time

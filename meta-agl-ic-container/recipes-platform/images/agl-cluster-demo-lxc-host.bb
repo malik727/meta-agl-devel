@@ -5,6 +5,7 @@ require lxc-host-image-minimal.bb
 
 CONTAINER_IMAGES ?= "agl-container-cluster:guest-image-cluster-demo \
                      agl-container-ivi:guest-image-ivi-demo \
+                     agl-container-ivi:guest-image-ivi-demo-platform \
                     "
 
 IMAGE_INSTALL += " \
