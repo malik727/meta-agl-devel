@@ -30,7 +30,7 @@ DEPENDS += "openblas vosk-openfst"
 inherit python3native
 
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
-MYCONF = "--mathlib=OPENBLAS --static --shared --use-cuda=no --fst-root=${STAGING_INCDIR}/../ --fst-version=1.8.0 --openblas-root=${STAGING_INCDIR}/../ "
+MYCONF = "--host=${TARGET_SYS} --mathlib=OPENBLAS --static --shared --use-cuda=no --fst-root=${STAGING_INCDIR}/../ --fst-version=1.8.0 --openblas-root=${STAGING_INCDIR}/../ "
 
 do_configure(){
 
