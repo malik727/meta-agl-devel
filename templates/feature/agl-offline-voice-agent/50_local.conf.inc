@@ -12,6 +12,8 @@ BBCLASSEXTEND:pn-python3-charset-normalizer = "native nativesdk"
 IMAGE_INSTALL:append = " \
     python3-snips-inference-agl \ 
     snips-model-agl \
+    python3-rasa \
+    rasa-model-agl \
     vosk \
     vosk-kaldi \
     vosk-server \
